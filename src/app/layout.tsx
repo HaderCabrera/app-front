@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Auth from "../components/auth/Auth";
+import NavBar from "@/components/NavBar";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Copower Dashboard",
-  description: "Next.js School Management System",
+  description: "App web, managed your analisis data company",
 };
 
 export default function RootLayout({
@@ -16,7 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <NavBar isSignedIn={false}/>
+        <Auth>
+          {children}
+        </Auth>
+      </body>
     </html>
   );
 }
