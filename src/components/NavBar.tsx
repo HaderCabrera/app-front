@@ -1,20 +1,20 @@
 "use client"
 
-import {Button, Divider, Flex} from "@aws-amplify/ui-react";
 import {useRouter} from "next/navigation";
-import {signOut} from "aws-amplify/auth";
+import {signOut } from "aws-amplify/auth";
 import {Hub} from "aws-amplify/utils";
 
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { styles } from "../styles";
-import { navLinks } from "../constants";
+
 import { logo } from "../assets";
 import Image from 'next/image';
 
+import { useAuthenticator } from '@aws-amplify/ui-react';
 
 const Navbar = ({isSignedIn}:{isSignedIn: boolean}) => {
+
   const [toggle, setToggle] = useState(false);
 
   const [authCheck, setAuthCheck] = useState(isSignedIn);
