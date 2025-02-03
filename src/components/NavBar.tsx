@@ -4,7 +4,6 @@ import {useRouter} from "next/navigation";
 import {signOut } from "aws-amplify/auth";
 import {Hub} from "aws-amplify/utils";
 
-
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
@@ -13,37 +12,23 @@ import Image from 'next/image';
 
 import { useAuthenticator } from '@aws-amplify/ui-react';
 
-const Navbar = ({isSignedIn}:{isSignedIn: boolean}) => {
+const Navbar = () => {
+
+  const { authStatus } = useAuthenticator(context => [context.authStatus]);
+
+    // Función para manejar el cierre de sesión o redirigir al inicio de sesión
+    const handleAuthAction = async () => {
+      if (authStatus === "authenticated") {
+        await signOut(); // Cierra la sesión
+        router.push("/"); // Redirige a la página principal
+      } else {
+        router.push("/signin"); // Redirige al inicio de sesión
+      }
+    };
 
   const [toggle, setToggle] = useState(false);
 
-  const [authCheck, setAuthCheck] = useState(isSignedIn);
   const router = useRouter();
-
-  useEffect(() => {
-    const hubListenerCancel = Hub.listen("auth", (data) => {
-      switch (data.payload.event) {
-        case "signedIn":
-          setAuthCheck(true);
-          router.push("/");
-          break;
-        case "signedOut":
-          setAuthCheck(false);
-          router.push("/");
-          break;
-      }
-    });
-
-    return () => hubListenerCancel();
-  },[router]);
-
-  const signOutSignIn = async () => {
-    if(authCheck){
-     await signOut();
-    } else {
-     router.push("/signin");
-    }
-   };
 
   return (
     <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
@@ -64,9 +49,9 @@ const Navbar = ({isSignedIn}:{isSignedIn: boolean}) => {
           <button
             type="button"
             className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            onClick={signOutSignIn}
+            onClick={handleAuthAction}
           >
-            {authCheck? "Cerrar sesión" : "Iniciar sesión"}
+            {authStatus === "authenticated" ? "Cerrar sesión" : "Iniciar sesión"}
           </button>
           <button
             data-collapse-toggle="navbar-sticky"

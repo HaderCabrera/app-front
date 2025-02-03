@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Auth>
-          <NavBar isSignedIn={false} />
+          <NavBar/>
           {children}
         </Auth>
       </body>
