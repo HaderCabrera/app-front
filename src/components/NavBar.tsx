@@ -1,44 +1,43 @@
 "use client"
 
-import {Button, Divider, Flex} from "@aws-amplify/ui-react";
 import {useRouter} from "next/navigation";
 import {signOut} from "aws-amplify/auth";
 import {Hub} from "aws-amplify/utils";
 
-
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { styles } from "../styles";
-import { navLinks } from "../constants";
+
 import { logo } from "../assets";
 import Image from 'next/image';
 
+import { useAuthenticator } from '@aws-amplify/ui-react';
 
-const Navbar = ({isSignedIn}:{isSignedIn: boolean}) => {
+
+const Navbar = () => {
+
+  const { authStatus } = useAuthenticator(context => [context.authStatus]);
+
   const [toggle, setToggle] = useState(false);
 
-  const [authCheck, setAuthCheck] = useState(isSignedIn);
+  //const [authCheck, setAuthCheck] = useState(isSignedIn);
   const router = useRouter();
 
   useEffect(() => {
     const hubListenerCancel = Hub.listen("auth", (data) => {
       switch (data.payload.event) {
         case "signedIn":
-          setAuthCheck(true);
           router.push("/");
           break;
         case "signedOut":
-          setAuthCheck(false);
           router.push("/");
           break;
       }
     });
-
     return () => hubListenerCancel();
   },[router]);
 
   const signOutSignIn = async () => {
-    if(authCheck){
+    if(authStatus === "authenticated"){
      await signOut();
     } else {
      router.push("/signin");
@@ -66,7 +65,7 @@ const Navbar = ({isSignedIn}:{isSignedIn: boolean}) => {
             className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             onClick={signOutSignIn}
           >
-            {authCheck? "Cerrar sesión" : "Iniciar sesión"}
+            {authStatus === "authenticated" ? "Cerrar sesión" : authStatus === "unauthenticated" ? "Iniciar sesión" : "Cargando..."}
           </button>
           <button
             data-collapse-toggle="navbar-sticky"
