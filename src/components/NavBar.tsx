@@ -1,51 +1,49 @@
 "use client"
 
+import {Button, Divider, Flex} from "@aws-amplify/ui-react";
 import {useRouter} from "next/navigation";
-import {signOut } from "aws-amplify/auth";
+import {signOut} from "aws-amplify/auth";
+import {Hub} from "aws-amplify/utils";
+
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-
+import { styles } from "../styles";
+import { navLinks } from "../constants";
 import { logo } from "../assets";
 import Image from 'next/image';
 
-import { useAuthenticator } from '@aws-amplify/ui-react';
-import { Hub } from "aws-amplify/utils";
 
-const Navbar = () => {
-
-  const { authStatus } = useAuthenticator(context => [context.authStatus]);
-
-  var estado = "";
-
-  const handleAuthOut = Hub.listen("auth", (data) => {
-    console.log("LLAME A LA FUNCION");
-    switch (data.payload.event) {
-      case "signedIn":
-        router.push("/");
-        console.log("ESTOY DENTRO");
-        break;
-      case "signedOut":
-        router.push("/signin"); // Redirige a la página principal si está autenticado
-        console.log("ESTOY AFUERA");
-        break;
-    }
-  });
-
-   // Función para manejar el cierre de sesión o redirigir al inicio de sesión
-  const handleAuthAction = async () => {
-    handleAuthOut();
-     if (authStatus === "authenticated") {
-       await signOut(); // Cierra la sesión
-       //router.push("/"); // Redirige a la página principal
-     } else {
-       //router.push("/signin"); // Redirige al inicio de sesión
-     }
-  }
-
+const Navbar = ({isSignedIn}:{isSignedIn: boolean}) => {
   const [toggle, setToggle] = useState(false);
 
+  const [authCheck, setAuthCheck] = useState(isSignedIn);
   const router = useRouter();
+
+  useEffect(() => {
+    const hubListenerCancel = Hub.listen("auth", (data) => {
+      switch (data.payload.event) {
+        case "signedIn":
+          setAuthCheck(true);
+          router.push("/");
+          break;
+        case "signedOut":
+          setAuthCheck(false);
+          router.push("/");
+          break;
+      }
+    });
+
+    return () => hubListenerCancel();
+  },[router]);
+
+  const signOutSignIn = async () => {
+    if(authCheck){
+     await signOut();
+    } else {
+     router.push("/signin");
+    }
+   };
 
   return (
     <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
@@ -66,9 +64,9 @@ const Navbar = () => {
           <button
             type="button"
             className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            onClick={handleAuthAction}
+            onClick={signOutSignIn}
           >
-            {authStatus === "authenticated" ? "Cerrar sesión" : "Iniciar sesión"}
+            {authCheck? "Cerrar sesión" : "Iniciar sesión"}
           </button>
           <button
             data-collapse-toggle="navbar-sticky"
