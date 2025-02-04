@@ -1,6 +1,7 @@
 "use client"
 
 import {useRouter} from "next/navigation";
+
 import {signOut} from "aws-amplify/auth";
 import {Hub} from "aws-amplify/utils";
 
@@ -11,8 +12,6 @@ import { logo } from "../assets";
 import Image from 'next/image';
 
 import { useAuthenticator } from '@aws-amplify/ui-react';
-
-
 const Navbar = () => {
 
   const { authStatus } = useAuthenticator(context => [context.authStatus]);
@@ -42,7 +41,21 @@ const Navbar = () => {
     } else {
      router.push("/signin");
     }
-   };
+
+   // Función para manejar el cierre de sesión o redirigir al inicio de sesión
+  const handleAuthAction = async () => {
+    handleAuthOut();
+     if (authStatus === "authenticated") {
+       await signOut(); // Cierra la sesión
+       //router.push("/"); // Redirige a la página principal
+     } else {
+       //router.push("/signin"); // Redirige al inicio de sesión
+     }
+  }
+
+  const [toggle, setToggle] = useState(false);
+
+  const router = useRouter();
 
   return (
     <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
@@ -63,9 +76,10 @@ const Navbar = () => {
           <button
             type="button"
             className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            onClick={signOutSignIn}
+            onClick={handleAuthAction}
           >
             {authStatus === "authenticated" ? "Cerrar sesión" : authStatus === "unauthenticated" ? "Iniciar sesión" : "Cargando..."}
+
           </button>
           <button
             data-collapse-toggle="navbar-sticky"
