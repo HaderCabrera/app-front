@@ -2,7 +2,6 @@
 
 import {useRouter} from "next/navigation";
 import {signOut } from "aws-amplify/auth";
-import {Hub} from "aws-amplify/utils";
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
@@ -11,20 +10,38 @@ import { logo } from "../assets";
 import Image from 'next/image';
 
 import { useAuthenticator } from '@aws-amplify/ui-react';
+import { Hub } from "aws-amplify/utils";
 
 const Navbar = () => {
 
   const { authStatus } = useAuthenticator(context => [context.authStatus]);
 
-    // Función para manejar el cierre de sesión o redirigir al inicio de sesión
-    const handleAuthAction = async () => {
-      if (authStatus === "authenticated") {
-        await signOut(); // Cierra la sesión
-        router.push("/"); // Redirige a la página principal
-      } else {
-        router.push("/signin"); // Redirige al inicio de sesión
-      }
-    };
+  var estado = "";
+
+  const handleAuthOut = Hub.listen("auth", (data) => {
+    console.log("LLAME A LA FUNCION");
+    switch (data.payload.event) {
+      case "signedIn":
+        router.push("/");
+        console.log("ESTOY DENTRO");
+        break;
+      case "signedOut":
+        router.push("/signin"); // Redirige a la página principal si está autenticado
+        console.log("ESTOY AFUERA");
+        break;
+    }
+  });
+
+   // Función para manejar el cierre de sesión o redirigir al inicio de sesión
+  const handleAuthAction = async () => {
+    handleAuthOut();
+     if (authStatus === "authenticated") {
+       await signOut(); // Cierra la sesión
+       //router.push("/"); // Redirige a la página principal
+     } else {
+       //router.push("/signin"); // Redirige al inicio de sesión
+     }
+  }
 
   const [toggle, setToggle] = useState(false);
 
