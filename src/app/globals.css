@@ -2,3 +2,102 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Definición de variables para el tema claro */
+:root {
+  --background3: #ededed;
+  --background:  linear-gradient(to right, #cfd9df, #e2ebf0);
+  --foreground: #19152c;
+  --primary: #6bc5d1;
+  --secondary: #532874;
+  --success: #6dbd8f;
+}
+
+/* Definición de variables para el tema oscuro */
+[data-theme="dark"] {
+  --background2: #19152c;
+  --background: linear-gradient(to right, #19152c, #532874);
+  --foreground: #ededed;
+  --primary: #6bc5d1;
+  --secondary: #532874;
+  --success: #6dbd8f;
+}
+
+/* Estilos generales */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: var(--foreground);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--secondary);
+}
+
+li a:hover {
+  color: var(--secondary);
+  text-decoration: underline solid;
+  text-decoration-thickness: 3px; /* Grosor */
+  text-decoration-color: var(--secondary); /* Color */
+  text-underline-offset: 8px; /* Distancia del texto */
+}
+
+button,
+.btn {
+  background-color: var(--primary);
+  color: var(--foreground);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover,
+.btn:hover {
+  background-color: var(--primary);
+  color: var(--background3);
+}
+
+.success {
+  color: var(--secondary);
+}
+
+/*       DECORACION MODO OBSCURO       */
+  [data-theme="dark"] button,.btn {
+    color: var(--foreground);
+    background: transparent;
+  }
+
+  [data-theme="dark"] button:hover {
+    background-color: var(--success);
+  }
+
+  [data-theme="dark"] li a:hover {
+    color: var(--success);
+    text-decoration: underline solid;
+    text-decoration-thickness: 3px; /* Grosor */
+    text-decoration-color: var(--success); /* Color */
+    text-underline-offset: 8px; /* Distancia del texto */
+  }
+
+  [data-theme="dark"] a:hover {
+    color: var(--success);
+  }
+
+  
+  [data-theme="dark"] .navbaraws button {
+    color: var(--background2);
+    border: 1px solid var(--background2);
+  }
+
+/*____________________________________*/
+
+
