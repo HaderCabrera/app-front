@@ -12,6 +12,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Copower Dashboard",
   description: "App web, managed your analisis data company",
+  icons: {
+    icon : '@/../favicon.ico'
+  },
 };
 
 
