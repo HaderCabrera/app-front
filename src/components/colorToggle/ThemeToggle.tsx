@@ -23,13 +23,13 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="bg-primary text-white px-4 py-2 rounded flex items-center gap-2"
+      className="bg-primary text-secondary px-2 py-2 rounded hover:bg-tertiary hover:text-primary"
     >
       {/* Muestra el ícono correspondiente al tema */}
       {theme === 'light' ? (
-        <MoonIcon className="h-6 w-6" /> // Ícono para el tema oscuro
+        <MoonIcon className="h-6 w-6" /> 
       ) : (
-        <SunIcon className="h-6 w-6" /> // Ícono para el tema claro
+        <SunIcon className="h-6 w-6" /> 
       )}
     </button>
   );
