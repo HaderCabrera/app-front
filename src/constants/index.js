@@ -15,4 +15,4 @@ export const navLinks = [
       id: "contacto",
       title: "Contacto",
     },
-  ];
+];

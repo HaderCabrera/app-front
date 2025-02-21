@@ -238,7 +238,7 @@ const formFields = {
 
 const  AuthClient = () => {
   return (
-    <div className=" navbaraws flex items-center justify-center h-screen h-[calc(100vh-7rem)]">
+    <div className="navbaraws flex mx-auto  justify-center items-center  w-80vw h-80vh">
       <Authenticator formFields={formFields} components={components}/>
     </div>
   );
