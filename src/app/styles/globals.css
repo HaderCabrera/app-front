@@ -4,12 +4,13 @@
 
 /* Definición de variables para el tema claro */
 :root {
-  --background3: #ededed;
+  --background2: #ededed;
   --background:  linear-gradient(to right, #cfd9df, #e2ebf0);
   --foreground: #19152c;
   --primary: #6bc5d1;
   --secondary: #532874;
   --success: #6dbd8f;
+  --matchcolor: #19152c;
 }
 
 /* Definición de variables para el tema oscuro */
@@ -20,6 +21,7 @@
   --primary: #6bc5d1;
   --secondary: #532874;
   --success: #6dbd8f;
+  --matchcolor: #19152c;
 }
 
 /* Estilos generales */
@@ -51,8 +53,8 @@ li a:hover {
 
 button,
 .btn {
-  background-color: var(--primary);
-  color: var(--foreground);
+  background-color: var(--foreground);
+  color: var(--background2);
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
@@ -63,21 +65,24 @@ button,
 button:hover,
 .btn:hover {
   background-color: var(--primary);
-  color: var(--background3);
+  color: var(--background2);
 }
 
 .success {
   color: var(--secondary);
 }
 
+h1 {
+  color: var(--foreground);
+}
+
 /*       DECORACION MODO OBSCURO       */
-  [data-theme="dark"] button,.btn {
-    color: var(--foreground);
-    background: transparent;
+  [data-theme="dark"] button {
+    background-color: var(--success);
   }
 
   [data-theme="dark"] button:hover {
-    background-color: var(--success);
+    background-color: var(--secondary);
   }
 
   [data-theme="dark"] li a:hover {
@@ -90,12 +95,6 @@ button:hover,
 
   [data-theme="dark"] a:hover {
     color: var(--success);
-  }
-
-  
-  [data-theme="dark"] .navbaraws button {
-    color: var(--background2);
-    border: 1px solid var(--background2);
   }
 
 /*____________________________________*/

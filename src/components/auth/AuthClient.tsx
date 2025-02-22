@@ -1,5 +1,7 @@
 "use client"
 
+import styles from './styles.module.css'
+
 import {Authenticator, Button, Heading, useAuthenticator, useTheme, View} from '@aws-amplify/ui-react'
 import Image from 'next/image';
 import { Text } from '@aws-amplify/ui-react';
@@ -14,8 +16,8 @@ const components = {
         <Image
           alt="Amplify logo"
           src={iconopng}
-          width={60}
-          height={60}
+          width={40}
+          height={40}
         />
         <h1 className='px-2'>¡Bienvenido!</h1>
       </View>
@@ -238,8 +240,8 @@ const formFields = {
 
 const  AuthClient = () => {
   return (
-    <div className="navbaraws flex mx-auto  justify-center items-center  w-80vw h-80vh">
-      <Authenticator formFields={formFields} components={components}/>
+    <div className="{styles.} flex mx-auto  justify-center items-center  w-80vw h-80vh">
+      <Authenticator formFields={formFields} components={components} className='hola'/>
     </div>
   );
 }
