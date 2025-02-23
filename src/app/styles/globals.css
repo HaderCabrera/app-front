@@ -43,17 +43,17 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+/* a:hover {
   color: var(--secondary);
-}
+} */
 
-li a:hover {
+/* li a:hover {
   color: var(--secondary);
   text-decoration: underline solid;
-  text-decoration-thickness: 3px; /* Grosor */
-  text-decoration-color: var(--secondary); /* Color */
-  text-underline-offset: 8px; /* Distancia del texto */
-}
+  text-decoration-thickness: 3px; /* Grosor 
+  text-decoration-color: var(--secondary); /* Color 
+  text-underline-offset: 8px; /* Distancia del texto 
+} */
 
 button {
   background-color: var(--foreground);

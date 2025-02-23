@@ -1,7 +1,12 @@
+.focus {
+    border-bottom: 4px solid var(--foreground);
+}
 
-
-
+[data-theme="dark"] .tests:hover {
+    color: var(--secondary);
+}
 /*       DECORACION MODO OBSCURO       */
+
 [data-theme="dark"] .barra a{
     color: var(--background2);
 }
