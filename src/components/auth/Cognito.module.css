@@ -1,0 +1,33 @@
+.btn button{
+    background-color: var(--background2);
+    color: var(--foreground);
+}
+
+.btn button:hover{
+    background-color: var(--primary);
+}
+
+.btn .amplify-tabs{
+    background-color: var(--foreground);
+}
+
+.btn .data-amplify-router button {
+    border-color: brown;
+  }
+ 
+
+/*       DECORACION MODO OBSCURO       */
+[data-theme="dark"] .btn button{
+    background-color: var(--background2);
+    color: var(--foreground);
+}
+
+[data-theme="dark"] .btn button:hover{
+    opacity: 0.87;
+}
+
+[data-theme="dark"] .btn button:focus{
+    opacity: 0.87;
+}
+
+/*____________________________________*/

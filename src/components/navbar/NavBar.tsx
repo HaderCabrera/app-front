@@ -1,5 +1,7 @@
 "use client"
 
+import Barra from './Barra.module.css';
+
 import {useRouter} from "next/navigation";
 
 import {signOut} from "aws-amplify/auth";
@@ -8,15 +10,15 @@ import {Hub} from "aws-amplify/utils";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
-import { logo } from "../../public/assets";
+import { logo } from "../../../public/assets";
 
 import Image from 'next/image';
 
 import { useAuthenticator } from '@aws-amplify/ui-react';
 
 
-import ThemeToggle from "@/components/colorToggle/ThemeToggle";
-import UserIconToggle from "@/components/userToggle/UserIconToggle";
+import ThemeToggle from "@/components/ui/ThemeToggle";
+import UserIconToggle from "@/components/ui/UserIconToggle";
 
 
 const Navbar = () => {
@@ -51,7 +53,7 @@ const Navbar = () => {
   }
   
   return (
-    <nav className="h-50">
+    <nav className={`${Barra.barra} h-50`}>
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 border-b">
         <Link href="http://localhost:3000/">
           <div className="flex items-center space-x-1 rtl:space-x-reverse">
@@ -71,7 +73,7 @@ const Navbar = () => {
           <button
             data-collapse-toggle="navbar-sticky"
             type="button"
-            className="inline-flex items-center p-1 w-10 h-10 justify-center text-sm rounded-lg md:hidden hover:bg-primary focus:outline-none focus:ring-2 focus:ring-gray-200"
+            className={`${Barra.phone} inline-flex items-center p-1 w-10 h-10 justify-center text-sm rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200`}
             aria-controls="navbar-sticky"
             aria-expanded="false"
             onClick={() => setToggle(!toggle)}
@@ -87,10 +89,10 @@ const Navbar = () => {
           </button>
 
         </div>
-        <div className={`items-center justify-between ${toggle ? 'flex' : 'hidden'} w-full md:flex md:w-auto md:order-1`} id="navbar-sticky">
-          <ul className="w-full flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+        <div className={` ${Barra.barra} items-center justify-between ${toggle ? 'flex' : 'hidden'} w-full md:flex md:w-auto md:order-1`} id="navbar-sticky">
+          <ul className={`${Barra.barra} w-full flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0`}>
             <li>
-              <a href="#" className="block py-2 px-3  rounded" aria-current="page">Home</a>
+              <a href="/" className="block py-2 px-3  rounded" aria-current="page">Home</a>
             </li>
             <li>
               <a href="#" className="block py-2 px-3  rounded">About</a>

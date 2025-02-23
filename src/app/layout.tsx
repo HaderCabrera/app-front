@@ -5,7 +5,7 @@ import { Inter } from "next/font/google";
 import '@/app/styles/globals.css'
 
 import Auth from "../components/auth/Auth";
-import NavBar from "@/components/NavBar";
+import NavBar from "@/components/navbar/NavBar";
 
 
 const inter = Inter({ subsets: ["latin"] });

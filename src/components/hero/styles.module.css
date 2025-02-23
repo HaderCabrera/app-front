@@ -1,0 +1,11 @@
+.test{
+    background-color: blue;
+}
+
+[data-theme="dark"] .test{
+    background-color: plum;
+}
+
+[data-theme="dark"] .test:hover{
+    background-color: white;
+}
