@@ -1,0 +1,12 @@
+/*       DECORACION MODO OBSCURO       */
+
+[data-theme="dark"] .ico{
+    background-color: transparent;
+    color: var(--background2);
+}
+
+[data-theme="dark"] .ico:hover{
+    background-color: var(--background2);
+    color: var(--foreground);
+}
+/*____________________________________*/

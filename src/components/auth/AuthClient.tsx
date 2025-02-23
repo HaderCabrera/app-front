@@ -1,9 +1,11 @@
 "use client"
 
+import Cognito from './Cognito.module.css'
+
 import {Authenticator, Button, Heading, useAuthenticator, useTheme, View} from '@aws-amplify/ui-react'
 import Image from 'next/image';
 import { Text } from '@aws-amplify/ui-react';
-import iconopng from './iconopng.png'
+import {logo} from '@/../public/assets/index'
 
 const components = {
   Header() {
@@ -13,9 +15,9 @@ const components = {
       <View textAlign="center" padding={tokens.space.large} className='justify-center items-center flex'>
         <Image
           alt="Amplify logo"
-          src={iconopng}
-          width={60}
-          height={60}
+          src={logo}
+          width={40}
+          height={40}
         />
         <h1 className='px-2'>¡Bienvenido!</h1>
       </View>
@@ -238,7 +240,7 @@ const formFields = {
 
 const  AuthClient = () => {
   return (
-    <div className="navbaraws flex mx-auto  justify-center items-center  w-80vw h-80vh">
+    <div className={`${Cognito.btn} flex mx-auto  justify-center items-center  w-80vw h-80vh`}>
       <Authenticator formFields={formFields} components={components}/>
     </div>
   );

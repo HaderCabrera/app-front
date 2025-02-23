@@ -1,5 +1,6 @@
 'use client';
 
+import Ico from './Ico.module.css'
 
 import { SunIcon, MoonIcon } from '@heroicons/react/24/solid';
 import { useEffect, useState } from 'react';
@@ -23,7 +24,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="bg-primary text-secondary px-2 py-2 rounded hover:bg-tertiary hover:text-primary"
+      className= {`${Ico.ico} px-2 py-2 rounded`}
     >
       {/* Muestra el ícono correspondiente al tema */}
       {theme === 'light' ? (

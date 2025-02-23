@@ -1,3 +1,6 @@
+
+import Ico from './Ico.module.css'
+
 import { UserCircleIcon, UserMinusIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/solid';
 
 import {Hub} from "aws-amplify/utils";
@@ -38,7 +41,7 @@ function UserIconToggle() {
     return (
         <button
             type="button"
-            className="font-medium rounded-lg text-sm px-1 py-1 text-center md:mx-2 hover:bg-primary focus:ring-2 focus:ring-primary"
+            className={`${Ico.ico} font-medium rounded-lg text-sm px-1 py-1 text-center md:mx-2`}
             onClick={signOutSignIn}
         >
             {authStatus === "authenticated" ? <UserMinusIcon className="h-6 w-6 m-1" /> : authStatus === "unauthenticated" ? <UserCircleIcon className="h-8 w-8"/> : <QuestionMarkCircleIcon className="h-8 w-8" />}

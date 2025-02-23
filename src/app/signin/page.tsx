@@ -1,5 +1,5 @@
 import React from 'react';
-import AuthClient from '../../components/auth/AuthClient';
+import AuthClient from '@/components/auth/AuthClient';
 
 const  SignIn = () => {
   return (
