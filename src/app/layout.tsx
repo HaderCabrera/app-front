@@ -1,6 +1,6 @@
 
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Poppins, Open_Sans } from "next/font/google";
 
 import '@/app/styles/globals.css'
 
@@ -8,7 +8,17 @@ import Auth from "../components/auth/Auth";
 import NavBar from "@/components/navbar/NavBar";
 
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const poppins = Poppins({
+  weight: ["400", "600", "700"], // Pesos para regular, semibold y bold
+  subsets: ["latin"],
+  variable: "--font-poppins",
+});
+
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  variable: "--font-open-sans",
+});
 
 export const metadata: Metadata = {
   title: "Copower Dashboard",
@@ -26,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.variable} ${poppins.variable} ${openSans.variable} font-sans`}>
         <Auth>
           <NavBar />
           {children}
