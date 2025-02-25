@@ -25,11 +25,11 @@ import UserIconToggle from "@/components/ui/UserIconToggle";
 
 const Navbar = () => {
 
+  const [toggle, setToggle] = useState(false);
   const [active, setActive] = useState("");
+  const [scrolled, setScrolled] = useState(false);
 
   const { authStatus } = useAuthenticator(context => [context.authStatus]);
-
-  const [toggle, setToggle] = useState(false);
 
   const router = useRouter();
 
@@ -47,6 +47,21 @@ const Navbar = () => {
     return () => hubListenerCancel();
   },[router]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      if (scrollTop > 100) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const signOutSignIn = async () => {
     if(authStatus === "authenticated"){
      await signOut();
@@ -56,7 +71,9 @@ const Navbar = () => {
   }
   
   return (
-    <nav className={`${Barra.barra} h-50 fixed top-0 z-20`}>
+    <nav className={`${Barra.barra} h-50 fixed top-0 z-20 w-full 
+      ${scrolled ? "backdrop-blur-md bg-opacity-10 bg-secondary" : "bg-transparent"
+    }`}>
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link href="/">
           <div className="flex items-center space-x-1 rtl:space-x-reverse">

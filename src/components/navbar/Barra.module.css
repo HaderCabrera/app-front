@@ -1,6 +1,9 @@
 .focus {
     border-bottom: 4px solid var(--foreground);
 }
+/* .barra {
+    opacity: 0.6;
+} */
 
 [data-theme="dark"] .tests:hover {
     color: var(--secondary);
