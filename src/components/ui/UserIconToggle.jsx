@@ -37,7 +37,7 @@ function UserIconToggle() {
             router.push("/signin");
         }
     }
-
+    
     return (
         <button
             type="button"

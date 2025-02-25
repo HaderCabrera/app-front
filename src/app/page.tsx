@@ -1,11 +1,13 @@
-import Hero from "@/components/hero/Hero"
+import Hero from "@/components/hero/Hero";
+import CardWhy from "@/components/cardwhy/CardWhy";
 
 const Homepage = () => {
   return (
-    <div >
+    <div>      
       <Hero/>
-
+      <CardWhy/>
     </div>
+
   )
 }
 

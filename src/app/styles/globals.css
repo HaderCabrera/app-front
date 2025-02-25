@@ -7,7 +7,7 @@
   --background2: #ededed;
   --background: linear-gradient(to bottom, #D5DEE7 0%, #E8EBF2 50%, #E2E7ED 100%), linear-gradient(to bottom, rgba(0,0,0,0.02) 50%, rgba(255,255,255,0.02) 61%, rgba(0,0,0,0.02) 73%), linear-gradient(33deg, rgba(255,255,255,0.20) 0%, rgba(0,0,0,0.20) 100%);
   background-blend-mode: normal,color-burn;
-  --foreground: hsl(250, 35%, 13%);
+  --foreground: #19152c;
   --primary: #6bc5d1;
   --secondary: #532874;
   --success: #6dbd8f;
@@ -17,8 +17,9 @@
 /* Definición de variables para el tema oscuro */
 [data-theme="dark"] {
   --background2: #19152c;
-  --background: linear-gradient(to bottom, #D5DEE7 0%, #19152c 50%, #E2E7ED 100%), linear-gradient(to bottom, rgba(0,0,0,0.02) 50%, rgba(255,255,255,0.02) 61%, rgba(0,0,0,0.02) 73%), linear-gradient(33deg, rgba(255,255,255,0.20) 0%, rgba(0,0,0,0.20) 100%);
-  background-blend-mode: normal,color-burn;
+  --background: linear-gradient(to top, #434343 0%, black 100%);
+  /* --background: linear-gradient(to bottom, #D5DEE7 0%, #19152c 50%, #E2E7ED 100%), linear-gradient(to bottom, rgba(0,0,0,0.02) 50%, rgba(255,255,255,0.02) 61%, rgba(0,0,0,0.02) 73%), linear-gradient(33deg, rgba(255,255,255,0.20) 0%, rgba(0,0,0,0.20) 100%);
+  background-blend-mode: normal,color-burn; */
   --foreground: #ededed;
   --primary: #6bc5d1;
   --secondary: #532874;
@@ -100,3 +101,27 @@ h1 {
 /*____________________________________*/
 
 
+/* Fuentes por defecto */
+body {
+  font-family: var(--font-inter), sans-serif; /* Fuente principal para párrafos */
+}
+
+/* Estilo para títulos */
+h1,
+h2,
+h3 {
+  font-family: var(--font-poppins), sans-serif; /* Fuente para títulos */
+  font-weight: 700;
+}
+
+/* Estilo para botones */
+button {
+  font-family: var(--font-open-sans), sans-serif; /* Fuente para botones */
+  font-weight: 600;
+}
+
+/* Estilo para descripciones */
+p {
+  font-family: var(--font-inter), sans-serif; /* Fuente para párrafos */
+  line-height: 1.6; /* Mejora la legibilidad */
+}

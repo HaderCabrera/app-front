@@ -2,11 +2,11 @@
 
 [data-theme="dark"] .ico{
     background-color: transparent;
-    color: var(--background2);
+    color: var(--foreground);
 }
 
 [data-theme="dark"] .ico:hover{
-    background-color: var(--background2);
-    color: var(--foreground);
+    background-color: var(--foreground);
+    color: var(--background2);
 }
 /*____________________________________*/

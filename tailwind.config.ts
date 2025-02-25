@@ -10,8 +10,7 @@ const config: Config = {
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-        "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-conic":        "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
         primary: "#19152c",
@@ -24,6 +23,7 @@ const config: Config = {
       },
       width: {
         '80vw': '80vw', // 80% del ancho de la pantalla
+        '20vw' : '20vw',
       },
       height: {
         '80vh': '90vh', // 80% de la altura de la pantalla
@@ -34,7 +34,7 @@ const config: Config = {
       keyframes: {
         slideIn: {
           '0%': { transform: 'translateX(-100%)' },
-          '100%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(20%)' },
         },
       },
     },

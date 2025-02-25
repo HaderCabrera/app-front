@@ -1,0 +1,17 @@
+.border{
+    border: 1px solid var(--primary);
+}
+
+.border2{
+    border-left: 2px solid var(--primary);
+    border-right: 2px solid var(--primary);
+}
+
+.ico {
+    color: var(--matchcolor);
+}
+
+
+[data-theme="dark"] .ico {
+    color: var(--foreground);
+}

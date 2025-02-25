@@ -31,7 +31,6 @@ const Navbar = () => {
 
   const [toggle, setToggle] = useState(false);
 
-  //const [authCheck, setAuthCheck] = useState(isSignedIn);
   const router = useRouter();
 
   useEffect(() => {
@@ -57,8 +56,8 @@ const Navbar = () => {
   }
   
   return (
-    <nav className={`${Barra.barra} h-50`}>
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 border-b">
+    <nav className={`${Barra.barra} h-50 fixed top-0 z-20`}>
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link href="/">
           <div className="flex items-center space-x-1 rtl:space-x-reverse">
             <Image
