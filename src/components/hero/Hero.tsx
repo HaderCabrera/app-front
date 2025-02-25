@@ -46,7 +46,7 @@ const Hero = () => {
 
 
   return (
-    <div className={` flex flex-col md:flex-row items-center justify-between 
+    <div className={`flex flex-col mt-20 md:flex-row items-center justify-between 
       ${  scrolled ? "bg-primary" : "bg-transparent"
       }`}
     >

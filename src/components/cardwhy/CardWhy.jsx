@@ -14,7 +14,7 @@ function CardWhy() {
 
   return (
     <div className='flex flex-col md:m-20 sm:m-10 gap-10 items-start'>
-      <div className='flex flex-col gap-5 md:max-w-[40vw] sm:max-w-[90vw] '>
+      <div className='flex flex-col gap-5 max-w-[40] md:max-w-[60vw] sm:max-w-[70vw] p-8'>
         <h1 className='text-5xl'>Why Choose Us ?</h1>
         <p>Leverage the power of AI to automatically optimize your purchases, ensuring you get the best value for your business with every transaction.</p>
       </div>
