@@ -240,7 +240,7 @@ const formFields = {
 
 const  AuthClient = () => {
   return (
-    <div className={`${Cognito.btn} flex mx-auto  justify-center items-center  w-80vw h-80vh`}>
+    <div className={`${Cognito.btn} flex mx-auto  justify-center items-center pt-20 w-80vw h-80vh`}>
       <Authenticator formFields={formFields} components={components}/>
     </div>
   );
