@@ -1,47 +1,55 @@
-import {service} from "@/../public/assets"
+import {
+  service,
+  service1,
+  service2,
+  service3,
+  service4,
+  service5,
+  service6,
+} from "@/../public/assets"
 
 export const navLinks = [
-    {
-      id: "home",
-      title: "Home",
-    },
-    {
-      id: "servicios",
-      title: "Servicios",
-    },
-    {
-      id: "tarifas",
-      title: "Tarifas",
-    },
-    {
-      id: "contacto",
-      title: "Contacto",
-    },
+  {
+    id: "home",
+    title: "Home",
+  },
+  {
+    id: "servicios",
+    title: "Servicios",
+  },
+  {
+    id: "tarifas",
+    title: "Tarifas",
+  },
+  {
+    id: "contacto",
+    title: "Contacto",
+  },
 ];
 
 export const whyUs = [
-      {
-        id: 1,
-        title: "Centraliza tu data",
-        des: "No quemes tiempo pensado en la arquitectura de tu data, dejanos eso a nosotros",
-      },
-      {
-        id: 2,
-        title: "Realtime analisis",
-        des: "Todos nuestros informes y tendencias se realizan con la data mas actualizada en la nucbe",
-      },
-      {
-        id: 3,
-        title: "Agilidad operativa",
-        des: "Toma deciciones en poco tiempo gracias a el analisis y generacion de reportes",
-      },
+  {
+    id: 1,
+    title: "Centraliza tu data",
+    des: "No quemes tiempo pensado en la arquitectura de tu data, dejanos eso a nosotros",
+  },
+  {
+    id: 2,
+    title: "Realtime analisis",
+    des: "Todos nuestros informes y tendencias se realizan con la data mas actualizada en la nucbe",
+  },
+  {
+    id: 3,
+    title: "Agilidad operativa",
+    des: "Toma deciciones en poco tiempo gracias a el analisis y generacion de reportes",
+  },
 ];
 
 export const projects = [
   {
-    name: "Jovimotos",
+    name: "Sitios Web Personalizados",
     description:
-      "Pagina web que permite registrarse, comprar, solicitar gestion de servicios y generar carro de compra. Fue diseñada para una compraventa de vehiculos de segunda.",
+      "Creamos sitios web modernos y funcionales adaptados a tus necesidades.",
     tags: [
       {
         name: "JavaScript",
@@ -60,9 +68,9 @@ export const projects = [
     source_code_link: "https://github.com/HaderCabrera/webPageJOVIMOTOS",
   },
   {
-    name: "2 Teras",
+    name: "Mejora tu Visibilidad",
     description:
-      "Plataforma web que permite el pago de los servicios publicos alojados en una base de datos ficticia, permite valida es estado de la factura y pagar si es necesario.",
+      "Optimizamos tu sitio para que aparezca en los primeros resultados de búsqueda.",
     tags: [
       {
         name: "JavaScript",
@@ -77,13 +85,13 @@ export const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: service,
+    image: service1,
     source_code_link: "https://github.com/HaderCabrera/project2TERAS",
   },
   {
-    name: "AerolineaSG",
+    name: "Estrategias de Crecimiento",
     description:
-      "Sistema capaz de gestionar todos los aspectos de aerolinea, desde la reserva de vuelos hasta el mantenimiento de los aviones y la administración de la tripulación.",
+      "Diseñamos campañas efectivas para aumentar tu alcance y ventas.",
     tags: [
       {
         name: "Java",
@@ -98,13 +106,13 @@ export const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: service,
+    image: service2,
     source_code_link: "https://github.com/HaderCabrera/aerolineaSG",
   },
   {
-    name: "Jovimotos",
+    name: "Apps Intuitivas y Rápidas",
     description:
-      "Pagina web que permite registrarse, comprar, solicitar gestion de servicios y generar carro de compra. Fue diseñada para una compraventa de vehiculos de segunda.",
+      "Desarrollamos aplicaciones móviles que conectan con tus usuarios.",
     tags: [
       {
         name: "JavaScript",
@@ -119,13 +127,13 @@ export const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: service,
+    image: service3,
     source_code_link: "https://github.com/HaderCabrera/webPageJOVIMOTOS",
   },
   {
-    name: "2 Teras",
+    name: "Soluciones Innovadoras",
     description:
-      "Plataforma web que permite el pago de los servicios publicos alojados en una base de datos ficticia, permite valida es estado de la factura y pagar si es necesario.",
+      "Te ayudamos a implementar tecnología que impulse tu negocio.",
     tags: [
       {
         name: "JavaScript",
@@ -140,13 +148,13 @@ export const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: service,
+    image: service4,
     source_code_link: "https://github.com/HaderCabrera/project2TERAS",
   },
   {
-    name: "AerolineaSG",
+    name: "Experiencias Memorables",
     description:
-      "Sistema capaz de gestionar todos los aspectos de aerolinea, desde la reserva de vuelos hasta el mantenimiento de los aviones y la administración de la tripulación.",
+      "Diseñamos interfaces atractivas y fáciles de usar para tus usuarios.",
     tags: [
       {
         name: "Java",
@@ -161,13 +169,13 @@ export const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: service,
+    image: service5,
     source_code_link: "https://github.com/HaderCabrera/aerolineaSG",
   },
   {
-    name: "Jovimotos",
+    name: "Ahorra Tiempo y Recursos",
     description:
-      "Pagina web que permite registrarse, comprar, solicitar gestion de servicios y generar carro de compra. Fue diseñada para una compraventa de vehiculos de segunda.",
+      "Automatizamos tareas repetitivas para que te enfoques en lo importante.",
     tags: [
       {
         name: "JavaScript",
@@ -182,28 +190,7 @@ export const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: service,
+    image: service6,
     source_code_link: "https://github.com/HaderCabrera/webPageJOVIMOTOS",
-  },
-  {
-    name: "2 Teras",
-    description:
-      "Plataforma web que permite el pago de los servicios publicos alojados en una base de datos ficticia, permite valida es estado de la factura y pagar si es necesario.",
-    tags: [
-      {
-        name: "JavaScript",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "Firebase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Bulma",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: service,
-    source_code_link: "https://github.com/HaderCabrera/project2TERAS",
   },
 ]

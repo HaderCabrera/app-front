@@ -71,10 +71,10 @@ const Navbar = () => {
   }
   
   return (
-    <nav className={`${Barra.barra} h-50 fixed top-0 z-20 w-full 
+    <nav className={`h-50 fixed top-0 z-20 w-full 
       ${scrolled ? "backdrop-blur-md bg-opacity-10 bg-secondary" : "bg-transparent"
     }`}>
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 gap-2">
         <Link href="/">
           <div className="flex items-center space-x-1 rtl:space-x-reverse">
             <Image
@@ -109,17 +109,17 @@ const Navbar = () => {
           </button>
 
         </div>
-        <div className={` ${Barra.barra} items-center justify-between ${toggle ? 'flex' : 'hidden'} w-full md:flex md:w-auto md:order-1`} id="navbar-sticky">
-          <ul className={`w-full flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0`}>
+        <div className={` items-center justify-between ${toggle ? `flex ${Barra.nav_ul}` : 'hidden'} w-full md:flex md:w-auto md:order-1 rounded`} id="navbar-sticky">
+          <ul className={`w-full flex flex-col p-4 md:p-0 font-medium  rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0`}>
             {navLinks.map((nav) => (
               <li
                 key={nav.id}
                 className={`${
-                  active === nav.title ? `${Barra.focus}` : ""
+                  active === nav.title ? `${Barra.link_nav}` : ""
                 }`}
                 onClick={() => setActive(nav.title)}
               >
-                <a className={`${Barra.tests} hover:text-dorado block py-2 px-3  rounded`} href={`#${nav.id}`}>{nav.title}</a>
+                <a className={`${Barra.link_nav} block py-2 px-3 rounded`} href={`#${nav.id}`}>{nav.title}</a>
               </li>
             ))}
           </ul>
