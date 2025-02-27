@@ -3,3 +3,44 @@
     font-size: 1.8rem;
     font-style: italic;
 }
+
+.sombra_l {
+    background: linear-gradient(
+      to left, /* bg-gradient-to-l */
+      rgb(229, 231, 235) 0%, /* from-gray-200 */
+      rgba(255, 255, 255, 0) 50%, /* via-transparent */
+      rgba(255, 255, 255, 0) 100% /* to-transparent */
+    );
+}
+
+[data-theme="dark"] .sombra_l {
+    background: linear-gradient(
+      to left, /* bg-gradient-to-l */
+      #323232 0%, /* from-gray-200 */
+      rgba(255, 255, 255, 0) 50%, /* via-transparent */
+      rgba(255, 255, 255, 0) 100% /* to-transparent */
+    );
+}
+
+.sombra_r {
+    background: linear-gradient(
+      to right, /* bg-gradient-to-l */
+      rgb(229, 231, 235) 0%, /* from-gray-200 */
+      rgba(255, 255, 255, 0) 50%, /* via-transparent */
+      rgba(255, 255, 255, 0) 100% /* to-transparent */
+    );
+}
+
+[data-theme="dark"] .sombra_r {
+    background: linear-gradient(
+      to right, /* bg-gradient-to-l */
+      #323232 0%, /* from-gray-200 */
+      rgba(255, 255, 255, 0) 50%, /* via-transparent */
+      rgba(255, 255, 255, 0) 100% /* to-transparent */
+    );
+}
+
+[data-theme="dark"] .sombra {
+    box-shadow: 0 10px 15px -3px rgba(156, 163, 175, 0.5), /* shadow-gray-500/50 */
+    0 4px 6px -4px rgba(156, 163, 175, 0.5);
+}

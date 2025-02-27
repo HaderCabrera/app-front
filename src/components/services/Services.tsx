@@ -9,10 +9,6 @@ import styles from "./styles.module.css";
 import { github } from "@/../public/assets/index";
 
 
-import { fadeIn, textVariant } from "@/utils/motion";
-
-
-
 type ProjectCardProps = {
   index: number;
   name: string;
@@ -31,7 +27,7 @@ const ProjectCard = ({
   source_code_link,
 }: ProjectCardProps) => {
   return (
-    <div className='flex justify-between' >
+    <div className='flex justify-center shadow-lg' >
       <motion.div
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
@@ -80,16 +76,16 @@ const ProjectCard = ({
 
 const Works = () => {
   return (
-    <div className="flex flex-col md:m-20 sm:m-10 gap-10 items-start">
+    <div className="flex flex-col md:m-20 sm:m-10 gap-10 items-center">
       {/* Sección de Título y Descripción */}
-      <div className='flex flex-col gap-5 max-w-[40] md:max-w-[60vw] sm:max-w-[70vw] p-8'>
+      <div className='flex flex-col items-center gap-5 max-w-[40] md:max-w-[60vw] sm:max-w-[70vw] p-8'>
         <h1 className='text-5xl'>Why We Shine ?</h1>
         <p>En un mundo digital en constante evolución, ofrecemos soluciones innovadoras diseñadas para potenciar tu negocio y llevarlo al siguiente nivel. Nuestros servicios combinan tecnología de vanguardia, creatividad y experiencia práctica para ayudarte a alcanzar tus objetivos, sin importar el tamaño o la industria de tu proyecto.</p>
       </div>
 
       {/* Sección de Tarjetas */}
       <div className="w-full px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-7xl mx-auto">
           {projects.map((project, index) => (
             <ProjectCard key={`project-${index}`} index={index} {...project} />
           ))}

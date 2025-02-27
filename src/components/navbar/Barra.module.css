@@ -1,28 +1,39 @@
-.focus {
-    border-bottom: 4px solid var(--foreground);
-}
-/* .barra {
-    opacity: 0.6;
-} */
-
-[data-theme="dark"] .tests:hover {
-    color: var(--secondary);
-}
-/*       DECORACION MODO OBSCURO       */
-
-[data-theme="dark"] .barra a{
-    color: var(--foreground);
-}
-
-
-[data-theme="dark"] .phone{
-    background-color: transparent;
-    color: var(--background2);
-}
-
-[data-theme="dark"] .phone:hover{
+.nav_ul {
     background-color: var(--background2);
-    color: var(--foreground);
 }
+
+.link_nav:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Fondo suave para temas claros */
+}
+.link_nav:focus {
+    border-bottom: 3px solid ;
+    box-sizing: border-box;
+}
+
+
+/*       DECORACION MODO OBSCURO       */
+    [data-theme="dark"] .nav_ul {
+        background-color: var(--background2);
+    }
+
+    [data-theme="dark"] .link_nav:hover {
+        background-color: rgba(255, 255, 255, 0.1); /* Fondo suave para temas oscuros */
+    }
+
+    [data-theme="dark"] .barra a{
+        color: var(--foreground);
+    }
+
+
+    [data-theme="dark"] .phone{
+        background-color: transparent;
+        color: var(--foreground);
+    }
+
+    [data-theme="dark"] .phone:hover{
+        background-color: var(--foreground);
+        color: var(--background2);
+    }
+
 
 /*____________________________________*/

@@ -8,22 +8,22 @@ import { Text } from '@aws-amplify/ui-react';
 import {logo} from '@/../public/assets/index'
 
 const components = {
-  Header() {
-    const { tokens } = useTheme();
+  // Header() {
+  //   const { tokens } = useTheme();
 
-    return (
-      <View textAlign="center" padding={tokens.space.large} className='justify-center items-center flex'>
-        <Image
-          alt="Amplify logo"
-          src={logo}
-          width={40}
-          height={40}
-        />
-        <h1 className='px-2'>¡Bienvenido!</h1>
-      </View>
+  //   return (
+  //     <View textAlign="center" padding={tokens.space.large} className='justify-center items-center flex'>
+  //       <Image
+  //         alt="Amplify logo"
+  //         src={logo}
+  //         width={40}
+  //         height={40}
+  //       />
+  //       <h1 className='px-2'>¡Bienvenido!</h1>
+  //     </View>
 
-    );
-  },
+  //   );
+  // },
 
   Footer() {
     const { tokens } = useTheme();
@@ -240,7 +240,7 @@ const formFields = {
 
 const  AuthClient = () => {
   return (
-    <div className={`${Cognito.btn} flex mx-auto  justify-center items-center pt-20 w-80vw h-80vh`}>
+    <div className={`${Cognito.btn} flex mx-auto justify-center items-center pt-16 md:pt-20 w-full max-w-screen-sm sm:max-w-screen-md md:max-w-screen-lg lg:max-w-screen-xl h-auto min-h-[calc(100vh-4rem)]`}>
       <Authenticator formFields={formFields} components={components}/>
     </div>
   );
