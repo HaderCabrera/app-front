@@ -1,0 +1,39 @@
+.sectionHeadText {
+    color: white; /* text-white */
+    font-weight: 900; /* font-black */
+    font-size: 30px; /* text-[30px] (base size for mobile) */
+  }
+  
+  /* Responsive sizes */
+  @media (min-width: 640px) { /* sm breakpoint */
+    .sectionHeadText {
+      font-size: 50px; /* sm:text-[50px] */
+    }
+  }
+  
+  @media (min-width: 768px) { /* md breakpoint */
+    .sectionHeadText {
+      font-size: 60px; /* md:text-[60px] */
+    }
+  }
+  
+  @media (min-width: 480px) { /* xs breakpoint */
+    .sectionHeadText {
+      font-size: 40px; /* xs:text-[40px] */
+    }
+  }
+
+
+  .sectionSubText {
+    color: var(--secondary); /* text-secondary (asumiendo que "secondary" es una variable CSS) */
+    font-size: 14px; /* text-[14px] (base size for mobile) */
+    text-transform: uppercase; /* uppercase */
+    letter-spacing: 0.1em; /* tracking-wider */
+  }
+  
+  /* Responsive sizes */
+  @media (min-width: 640px) { /* sm breakpoint */
+    .sectionSubText {
+      font-size: 18px; /* sm:text-[18px] */
+    }
+  }
