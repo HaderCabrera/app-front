@@ -194,3 +194,108 @@ export const projects = [
     source_code_link: "https://github.com/HaderCabrera/webPageJOVIMOTOS",
   },
 ]
+
+export const plansA = [
+  {
+    id: 1,
+    label: "Basico",
+    price: "$9.99",
+    features: [
+      "Acceso a funciones básicas",
+      "Soporte por correo electrónico",
+      "5 proyectos por cuenta",
+      "Almacenamiento de 10 GB",
+    ],
+    isFeatured: false, // Indica si este plan está destacado
+    buttonLabel: "Seleccionar Plan",
+    buttonColor: "bg-blue-500 hover:bg-blue-600", // Color del botón (Tailwind CSS)
+    recommendedFor: "Individuos o pequeños equipos", // A quién está dirigido
+  },
+  {
+    id: 2,
+    label: "Profesional",
+    price: "$29.99",
+    features: [
+      "Acceso a todas las funciones",
+      "Soporte prioritario",
+      "20 proyectos por cuenta",
+      "Almacenamiento de 50 GB",
+      "Integración con herramientas externas",
+    ],
+    isFeatured: true, // Este plan está destacado
+    buttonLabel: "Recomendado",
+    buttonColor: "bg-green-500 hover:bg-green-600", // Color del botón (Tailwind CSS)
+    recommendedFor: "Profesionales y empresas medianas",
+  },
+  {
+    id: 3,
+    label: "Empresarial",
+    price: "$49.99",
+    features: [
+      "Acceso ilimitado a todas las funciones",
+      "Soporte 24/7",
+      "Proyectos ilimitados",
+      "Almacenamiento de 200 GB",
+      "Capacitación personalizada",
+      "Asignación de cuentas de equipo",
+    ],
+    isFeatured: false, // Indica si este plan está destacado
+    buttonLabel: "Seleccionar Plan",
+    buttonColor: "bg-purple-500 hover:bg-purple-600", // Color del botón (Tailwind CSS)
+    recommendedFor: "Grandes empresas y corporaciones",
+    icono: "🫐",
+  },
+];
+
+
+export const plansB = [
+  {
+    id: 1,
+    label: "Basico",
+    price: "$27.99",
+    features: [
+      "Acceso a funciones básicas",
+      "Soporte por correo electrónico",
+      "5 proyectos por cuenta",
+      "Almacenamiento de 10 GB",
+    ],
+    isFeatured: false, // Indica si este plan está destacado
+    buttonLabel: "Seleccionar Plan",
+    buttonColor: "bg-blue-500 hover:bg-blue-600", // Color del botón (Tailwind CSS)
+    recommendedFor: "Individuos o pequeños equipos", // A quién está dirigido
+  },
+  {
+    id: 2,
+    label: "Profesional",
+    price: "$31.47",
+    features: [
+      "Acceso a todas las funciones",
+      "Soporte prioritario",
+      "20 proyectos por cuenta",
+      "Almacenamiento de 50 GB",
+      "Integración con herramientas externas",
+    ],
+    isFeatured: true, // Este plan está destacado
+    buttonLabel: "Recomendado",
+    buttonColor: "bg-green-500 hover:bg-green-600", // Color del botón (Tailwind CSS)
+    recommendedFor: "Profesionales y empresas medianas",
+  },
+  {
+    id: 3,
+    label: "Empresarial",
+    price: "$92.64",
+    features: [
+      "Acceso ilimitado a todas las funciones",
+      "Soporte 24/7",
+      "Proyectos ilimitados",
+      "Almacenamiento de 200 GB",
+      "Capacitación personalizada",
+      "Asignación de cuentas de equipo",
+    ],
+    isFeatured: false, // Indica si este plan está destacado
+    buttonLabel: "Seleccionar Plan",
+    buttonColor: "bg-purple-500 hover:bg-purple-600", // Color del botón (Tailwind CSS)
+    recommendedFor: "Grandes empresas y corporaciones",
+    icono: "🫐",
+  },
+];

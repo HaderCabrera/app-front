@@ -1,0 +1,67 @@
+.container {
+    border-radius: 10px;
+    background: white;
+    overflow: hidden;
+    box-shadow:
+      0 1px 1px hsl(0deg 0% 0% / 0.075),
+      0 2px 2px hsl(0deg 0% 0% / 0.075),
+      0 4px 4px hsl(0deg 0% 0% / 0.075),
+      0 8px 8px hsl(0deg 0% 0% / 0.075),
+      0 16px 16px hsl(0deg 0% 0% / 0.075),
+      0 2px 2px hsl(0deg 0% 0% / 0.075),
+      0 4px 4px hsl(0deg 0% 0% / 0.075),
+      0 8px 8px hsl(0deg 0% 0% / 0.075),
+      0 16px 16px hsl(0deg 0% 0% / 0.075);
+  }
+  
+  .nav {
+    display: flex;
+    background: #fdfdfd;
+    border-radius: 10px;
+    border-bottom: 1px solid #eeeeee;
+    padding: 4px;
+    gap: 1rem;
+  }
+
+  .nav li{
+    padding: 5px;
+  }
+  
+  .tabsStyles {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .tab {
+    border-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    position: relative;
+    background: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    user-select: none;
+    color: #0f1115;
+  }
+  
+  .underline {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--primary);
+  }
+  
+  .iconContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+  }
+  
