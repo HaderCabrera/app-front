@@ -88,7 +88,6 @@ const MotorData = () => {
 
   // Función para combinar los datos de los tres archivos
   const combineData = (powerData: MotorData[], cylinderTempData: MotorData[], airTempData: MotorData[]): MotorReading[] => {
-    // Tomamos solo los datos más recientes (los primeros 3 registros)
     const recentPowerData = powerData.slice(0, 3);
     const recentCylinderTempData = cylinderTempData.slice(0, 3);
     const recentAirTempData = airTempData.slice(0, 3);
