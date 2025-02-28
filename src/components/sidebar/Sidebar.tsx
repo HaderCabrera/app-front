@@ -2,15 +2,17 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { 
-  FaBars, 
-  FaUserCircle, 
-  FaHome, 
-  FaFolder, 
-  FaChartBar, 
-  FaCog 
+import { usePathname, useRouter } from "next/navigation";
+import {
+  FaBars,
+  FaUserCircle,
+  FaHome,
+  FaFolder,
+  FaChartBar,
+  FaCog,
+  FaSignOutAlt
 } from "react-icons/fa";
+import { useAuthenticator } from "@aws-amplify/ui-react";
 
 type MenuItem = {
   id: number;
@@ -30,6 +32,8 @@ const Sidebar = () => {
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
   const [collapsed, setCollapsed] = useState<boolean>(false);
   const pathname = usePathname();
+  const router = useRouter();
+  const { signOut, user } = useAuthenticator((context) => [context.user]);
 
   useEffect(() => {
     const fetchMenuItems = async () => {
@@ -61,32 +65,42 @@ const Sidebar = () => {
     return null;
   };
 
+  const handleSignOut = () => {
+    signOut();
+    router.push("/"); // Redirige a la página principal después de cerrar sesión
+  };
+
   return (
     <div
-      className={`${
-        collapsed ? "w-16" : "w-64"
-      } bg-[var(--background2)] border-r border-[var(--primary)] min-h-screen transition-all duration-300 flex flex-col shadow-xl`}
+      className={`${collapsed ? "w-16" : "w-64"
+        } bg-[var(--background2)] border-r border-[var(--primary)] min-h-screen transition-all duration-300 flex flex-col shadow-xl`}
     >
-      <button
-        onClick={() => setCollapsed(!collapsed)}
-        className="absolute top-4 -right-4 bg-[var(--primary)] text-[var(--background2)] p-2 rounded-full shadow-lg hover:bg-[var(--secondary)] transition"
-      >
-        <FaBars />
-      </button>
+      {/* Contenedor del header con logo, título y botón de hamburguesa */}
+      <div className="flex items-center py-4 px-2 border-b border-[var(--primary)]">
+        {/* Botón hamburguesa alineado al inicio con colores invertidos */}
+        <button
+          onClick={() => setCollapsed(!collapsed)}
+          className="p-2 rounded-full bg-[var(--primary)] text-[var(--background2)] hover:bg-[#1a1a2e] transition-all mr-2"
+        >
+          <FaBars />
+        </button>
 
-      <div className="flex flex-col items-center py-4 border-b border-[var(--primary)]">
-        <div className="bg-[var(--primary)] p-2 rounded-full shadow-lg mb-2">
+        {/* Logo */}
+        <div className="bg-[var(--primary)] p-2 rounded-full shadow-lg">
           <img
             src="assets/iconopng.png"
             alt="Logo"
-            className={`${collapsed ? "w-8" : "w-12"} transition-all duration-300`}
+            className={`${collapsed ? "w-6" : "w-8"} transition-all duration-300`}
           />
         </div>
+
+        {/* Título - solo visible cuando no está colapsado */}
         {!collapsed && (
-          <h2 className="text-lg font-bold text-[var(--foreground)]">Petrolera</h2>
+          <h2 className="ml-3 text-lg font-bold text-[var(--foreground)]">Aeteris</h2>
         )}
       </div>
 
+      {/* Navegación */}
       <nav className="flex-1 px-2 py-4 overflow-y-auto">
         <ul className="space-y-2">
           {menuItems.map((item) => {
@@ -111,16 +125,36 @@ const Sidebar = () => {
         </ul>
       </nav>
 
-      <div className="p-2 border-t border-[var(--primary)] flex items-center">
-        <div className="bg-[var(--primary)] rounded-full p-2 flex-shrink-0 shadow-md">
-          <FaUserCircle className="text-xl text-[var(--background2)]" />
-        </div>
-        {!collapsed && (
-          <div className="ml-2">
-            <p className="font-medium text-sm text-[var(--foreground)]">Admin</p>
-            <p className="text-xs text-[var(--primary)]">Administrador</p>
+      {/* Pie de página con perfil de usuario */}
+      <div className="p-2 border-t border-[var(--primary)]">
+        {/* Información del usuario */}
+        <div className="flex items-center mb-3">
+          <div className="bg-[var(--primary)] rounded-full p-2 flex-shrink-0 shadow-md">
+            <FaUserCircle className="text-xl text-[var(--background2)]" />
           </div>
-        )}
+          {!collapsed && (
+            <div className="ml-2">
+              <p className="font-medium text-sm text-[var(--foreground)]">
+                {user?.username || "Admin"}
+              </p>
+              <p className="text-xs text-[var(--primary)]">Administrador</p>
+            </div>
+          )}
+        </div>
+
+        {/* Contenedor centrado para el botón de cerrar sesión */}
+        <div className="flex justify-center">
+          <button
+            onClick={handleSignOut}
+            className="flex items-center p-2 rounded-full bg-[var(--primary)] text-[var(--background2)] hover:bg-[#1a1a2e] transition-all duration-300 shadow-md"
+            title="Cerrar Sesión"
+          >
+            <FaSignOutAlt className="text-lg" />
+            {!collapsed && (
+              <span className="ml-2 font-medium text-sm hidden md:inline">Cerrar Sesión</span>
+            )}
+          </button>
+        </div>
       </div>
     </div>
   );
