@@ -6,6 +6,8 @@ import {Authenticator, Button, Heading, useAuthenticator, useTheme, View} from '
 import Image from 'next/image';
 import { Text } from '@aws-amplify/ui-react';
 import {logo} from '@/../public/assets/index'
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 const components = {
   // Header() {
@@ -238,11 +240,20 @@ const formFields = {
   },
 };
 
-const  AuthClient = () => {
+const AuthClient = () => {
+  const { authStatus } = useAuthenticator((context) => [context.authStatus]);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (authStatus === "authenticated") {
+      router.push("/dashboard");
+    }
+  }, [authStatus, router]);
+
   return (
     <div className={`${Cognito.btn} flex mx-auto justify-center items-center pt-16 md:pt-20 w-full max-w-screen-sm sm:max-w-screen-md md:max-w-screen-lg lg:max-w-screen-xl h-auto min-h-[calc(100vh-4rem)]`}>
-      <Authenticator formFields={formFields} components={components}/>
+      <Authenticator formFields={formFields} components={components} />
     </div>
   );
-}
+};
 export default AuthClient;
