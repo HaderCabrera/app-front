@@ -1,7 +1,7 @@
 const Faoter = () =>  {
 
     return (
-        <footer className="py-6 border border-t-white">
+        <footer className="py-6 bg-slate-700" id="contacto">
         <div className="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center">
             {/* Sección Izquierda: Información */}
             <div className="text-center sm:text-left mb-4 sm:mb-0">

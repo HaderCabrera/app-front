@@ -6,8 +6,8 @@
     background-color: rgba(0, 0, 0, 0.1); /* Fondo suave para temas claros */
 }
 .link_nav:focus {
-    border-bottom: 3px solid ;
-    box-sizing: border-box;
+    /* border-bottom: 3px solid ;
+    box-sizing: border-box; */
 }
 
 
