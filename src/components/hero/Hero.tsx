@@ -38,7 +38,7 @@ const Hero = () => {
 
   useEffect(() => {
     if (isLargeScreen) {
-      controls.start({ x: -100 }); // Aplica la animación en pantallas grandes
+      controls.start({ x: 400 }); // Aplica la animación en pantallas grandes
     } else {
       controls.start({ x: 0 }); // Elimina la animación en pantallas pequeñas
     }
@@ -50,16 +50,10 @@ const Hero = () => {
       ${  scrolled ? "bg-primary" : "bg-transparent"
       }`}
     >
-      <div className=" w-full md:w-1/2 bg-primary rounded-lg">
-        <Image
-          src={hero_img} // Ruta de la imagen (colócala en la carpeta "public")
-          alt="Hero Image"
-          width={400}
-          height={400}
-          className="rounded-lg"
-        />
+      <div className='h-[40vh] w-full text-center'>
+          HERO
       </div>
-      <motion.div className="md:w-1/2 bg-slate-300 p-5 rounded-lg"
+      {/* <motion.div className="md:w-1/2 bg-slate-300 p-5 rounded-lg"
         animate={controls}
         initial={false}
         transition={{ ease: "easeOut", duration: 3 }}  
@@ -74,7 +68,7 @@ const Hero = () => {
         <button className="px-6 py-3 rounded-lg ">
           Comenzar
         </button>
-      </motion.div>
+      </motion.div> */}
     </div >
   );
 };

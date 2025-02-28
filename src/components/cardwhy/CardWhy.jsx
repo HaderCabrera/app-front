@@ -13,7 +13,7 @@ function CardWhy() {
   const iconos = [PlayCircleIcon, PlusCircleIcon, ArrowDownCircleIcon]
 
   return (
-    <div className='flex flex-col md:m-20 sm:m-10 gap-10 items-center'>
+    <div className='flex flex-col md:m-20 sm:m-10 gap-10 items-center bg-slate-300 rounded-2xl'>
       {/* Sección del título y descripción */}
       <div className='flex flex-col items-center gap-5 max-w-[40] md:max-w-[60vw] sm:max-w-[70vw] p-8'>
         <h1 className='text-5xl'>Why Choose Us ?</h1>
@@ -23,7 +23,7 @@ function CardWhy() {
       </div>
 
       {/* Sección de tarjetas */}
-      <div className={`flex flex-col md:flex-row gap-6 p-6 sm:p-6 md:p-8 rounded-lg w-full overflow-hidden md:border lg:border border-gray-300`}>
+      <div className={`flex flex-col md:flex-row gap-6 p-6 sm:p-6 md:p-8 rounded-lg w-full overflow-hidden bg-slate-100`}>
         {whyUs.map((why) => {
           const IconComponent = iconos[why.id - 1];
           return (

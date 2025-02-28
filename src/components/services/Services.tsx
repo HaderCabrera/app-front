@@ -1,6 +1,5 @@
 'use client'
 
-
 import { StaticImageData } from "next/image";
 import { projects } from '@/constants/index'
 
@@ -27,20 +26,20 @@ const ProjectCard = ({
   source_code_link,
 }: ProjectCardProps) => {
   return (
-    <div className='flex justify-center shadow-lg' >
+    <div className='flex justify-center shadow-lg bg-slate-200 rounded-lg' >
       <motion.div
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         onHoverStart={() => console.log('hover started!')}
         className='p-5 rounded-2xl sm:w-[360px] w-full cursor-pointer'
       >
-        <div className='relative w-full h-[230px]'>
+        <div className='relative w-auto h-auto'>
           <img
             src={image.src}
             alt='project_image'
-            className='w-full h-full object-cover rounded-2xl'
+            className='w-30 h-48 lg:h-40 object-cover rounded-2xl'
           />
-          <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
+          <div className='absolute inset-0 flex justify-end m-3'>
             <div
               onClick={() => window.open(source_code_link, "_blank")}
               className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
@@ -76,7 +75,7 @@ const ProjectCard = ({
 
 const Works = () => {
   return (
-    <div className="flex flex-col md:m-20 sm:m-10 gap-10 items-center">
+    <div className="flex flex-col md:m-20 sm:m-10 gap-10 p-10 items-center bg-slate-300 rounded-2xl">
       {/* Sección de Título y Descripción */}
       <div className='flex flex-col items-center gap-5 max-w-[40] md:max-w-[60vw] sm:max-w-[70vw] p-8'>
         <h1 className='text-5xl'>Why We Shine ?</h1>
@@ -85,7 +84,7 @@ const Works = () => {
 
       {/* Sección de Tarjetas */}
       <div className="w-full px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-7xl mx-auto">
           {projects.map((project, index) => (
             <ProjectCard key={`project-${index}`} index={index} {...project} />
           ))}
