@@ -22,6 +22,7 @@ import { useAuthenticator } from '@aws-amplify/ui-react';
 import ThemeToggle from "@/components/ui/ThemeToggle";
 import UserIconToggle from "@/components/ui/UserIconToggle";
 
+import { motion } from "framer-motion";
 
 const Navbar = () => {
 
@@ -112,15 +113,18 @@ const Navbar = () => {
         <div className={` items-center justify-between ${toggle ? `flex ${Barra.nav_ul}` : 'hidden'} w-full md:flex md:w-auto md:order-1 rounded`} id="navbar-sticky">
           <ul className={`w-full flex flex-col p-4 md:p-0 font-medium  rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0`}>
             {navLinks.map((nav) => (
-              <li
+              <motion.li
                 key={nav.id}
                 className={`${
                   active === nav.title ? `${Barra.link_nav}` : ""
                 }`}
                 onClick={() => setActive(nav.title)}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                onHoverStart={() => console.log('hover started!')}
               >
                 <a className={`${Barra.link_nav} block py-2 px-3 rounded`} href={`#${nav.id}`}>{nav.title}</a>
-              </li>
+              </motion.li>
             ))}
           </ul>
         </div>

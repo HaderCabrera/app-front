@@ -29,8 +29,6 @@
   --matchcolor: #19152c;
 }
 
-
-
 /* Estilos generales */
 body {
   background: var(--background);
@@ -47,17 +45,6 @@ a {
   text-decoration: none;
 }
 
-/* a:hover {
-  color: var(--secondary);
-} */
-
-/* li a:hover {
-  color: var(--secondary);
-  text-decoration: underline solid;
-  text-decoration-thickness: 3px; /* Grosor 
-  text-decoration-color: var(--secondary); /* Color 
-  text-underline-offset: 8px; /* Distancia del texto 
-} */
 
 button {
   background-color: var(--foreground);
@@ -80,27 +67,10 @@ h1 {
 }
 
 /*       DECORACION MODO OBSCURO       */
-
 [data-theme="dark"] button:hover {
   background-color: var(--background2);
   color: var(--foreground);
 }
-
-  /* [data-theme="dark"] button {
-    background-color: var(--success);
-  }
-
-  [data-theme="dark"] li a:hover {
-    color: var(--success);
-    text-decoration: underline solid;
-    text-decoration-thickness: 3px;
-    text-decoration-color: var(--success); 
-    text-underline-offset: 8px; 
-  }
-
-  [data-theme="dark"] a:hover {
-    color: var(--success);
-  } */
 /*____________________________________*/
 
 

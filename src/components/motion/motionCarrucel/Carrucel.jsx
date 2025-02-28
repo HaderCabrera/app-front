@@ -28,7 +28,7 @@ export default function ContinuousTimelineAnimation() {
         }}
       >
         {phrases.map((phrase, index) => (
-          <span key={index} className={`${MotionText.sombra} text-2xl font-bold px-4 rounded-full mx-5 opacity-3 shadow-lg`}>
+          <span key={index} className={`${MotionText.sombra} text-lg font-bold px-4 rounded-full mx-5 opacity-3 shadow-lg`}>
             {phrase}
           </span>
         ))}
@@ -48,7 +48,7 @@ export default function ContinuousTimelineAnimation() {
         }}
       >
         {phrases.map((phrase, index) => (
-          <span key={index} className={`${MotionText.sombra} text-2xl font-bold px-4 rounded-full mx-5 opacity-3 shadow-lg`}>
+          <span key={index} className={`${MotionText.sombra} text-lg font-bold px-4 rounded-full mx-5 opacity-3 shadow-lg`}>
             {phrase}
           </span>
         ))}
