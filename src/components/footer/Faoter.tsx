@@ -1,8 +1,8 @@
 const Faoter = () =>  {
 
     return (
-        <footer className="py-6 bg-slate-700" id="contacto">
-        <div className="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center">
+        <footer className="py-6" id="contacto">
+        <div className="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center text-white">
             {/* Sección Izquierda: Información */}
             <div className="text-center sm:text-left mb-4 sm:mb-0">
                 <p className="text-sm">&copy; 2025 CPWLTDA | I&D. Todos los derechos reservados.</p>

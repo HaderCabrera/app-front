@@ -2,12 +2,8 @@
     background-color: var(--background2);
 }
 
-.link_nav:hover {
-    background-color: rgba(0, 0, 0, 0.1); /* Fondo suave para temas claros */
-}
-.link_nav:focus {
-    /* border-bottom: 3px solid ;
-    box-sizing: border-box; */
+.link_nav {
+    color: var(--background2);
 }
 
 
@@ -35,5 +31,8 @@
         color: var(--background2);
     }
 
+     [data-theme="dark"]   .link_nav {
+        color: var(--foreground);
+    }
 
 /*____________________________________*/

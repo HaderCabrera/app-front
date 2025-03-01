@@ -1,9 +1,8 @@
 
-
 import {stylesT} from "@/components/stylesT";
 
 import { whyUs } from '@/constants/index'
-import Image from 'next/image';
+
 
 import WhyCard from './WhyCard.module.css'
 
@@ -15,7 +14,7 @@ function CardWhy() {
   const iconos = [PlayCircleIcon, PlusCircleIcon, ArrowDownCircleIcon]
 
   return (
-    <div className= {`${stylesT.sectionLayout}`}>
+    <section className= {`${stylesT.sectionLayout}`}>
       {/* Sección del título y descripción */}
       <div className='flex flex-col items-center gap-5 max-w-[40] md:max-w-[60vw] sm:max-w-[70vw] p-8'>
         <h1 className='text-5xl'>Why Choose Us ?</h1>
@@ -40,13 +39,13 @@ function CardWhy() {
                   `}
             >
               {<IconComponent className={`${WhyCard.ico} w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20`} />}
-              <h1 className=''>{why.title}</h1>
+              <h1>{why.title}</h1>
               <p className={`${WhyCard.test} `}>{why.des}</p>
             </div>
           );
         })}
       </div>
-    </div>
+    </section>
 
   );
 }
