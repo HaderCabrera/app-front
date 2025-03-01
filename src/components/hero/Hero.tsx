@@ -3,12 +3,10 @@
 
 import  { useEffect, useState } from 'react';
 
-
 import { motion, useAnimation } from "framer-motion";
 
 import { useMediaQuery } from "react-responsive";
 
-import Jero from './Jero.module.css'
 
 const Hero = () => {
 
@@ -44,7 +42,7 @@ const Hero = () => {
 
 
   return (
-    <div className="relative flex items-center justify-center overflow-hidden h-[40vh] md:h-[75vh]">
+    <div id="home" className="relative flex items-center justify-center overflow-hidden h-[40vh] md:h-[75vh]">
       {/* Video de fondo */}
       <video
         autoPlay

@@ -12,8 +12,6 @@ import {Hub} from "aws-amplify/utils";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
-import { logo } from "../../../public/assets";
-
 import Image from 'next/image';
 
 import { useAuthenticator } from '@aws-amplify/ui-react';
@@ -33,6 +31,7 @@ const Navbar = () => {
   const { authStatus } = useAuthenticator(context => [context.authStatus]);
 
   const router = useRouter();
+
 
   useEffect(() => {
     const hubListenerCancel = Hub.listen("auth", (data) => {
@@ -72,20 +71,19 @@ const Navbar = () => {
   }
   
   return (
-    <nav className={`h-50 fixed top-0 z-20 w-full 
+    <nav className={`h-50 ${scrolled ? 'fixed' : 'block'} top-0 z-20 w-full 
       ${scrolled ? "backdrop-blur-md bg-opacity-10 bg-secondary" : "bg-transparent"
     }`}>
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 gap-2">
         <Link href="/">
           <div className="flex items-center space-x-1 rtl:space-x-reverse">
             <Image
-              src={logo}
-              width={32}
+              src="/assets/logo_boton.png"
+              width={100}
               height={32}
-              className="h-8"
+              className="h-8 object-contain"
               alt="Logo"
             />
-            <span className="self-center text-2xl font-bold whitespace-nowrap ">Aeteris</span>
           </div>
         </Link>
         <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">

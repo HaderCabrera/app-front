@@ -17,7 +17,7 @@ export default function SharedLayoutAnimation() {
   const [selectedTab, setSelectedTab] = useState(tabs[0].data);
 
   return (
-    <div id="tarifas" className={`${stylesT.sectionLayout}`}>
+    <section id="tarifas" className={`${stylesT.sectionLayout}`}>
       <nav>
         <ul className={styles.nav}>
           {tabs.map((item) => (
@@ -82,6 +82,6 @@ export default function SharedLayoutAnimation() {
           </motion.div>
         </AnimatePresence>
       </main>
-    </div>
+    </section>
   );
 }

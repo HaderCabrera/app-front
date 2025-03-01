@@ -18,13 +18,14 @@ const config: Config = {
         "gradient-conic":        "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        primary: "#19152c",
-        secondary: "#ededed",
-        tertiary: "#6bc5d1",
         "black-100": "#100d25",
         "black-200": "#090325",
         "white-100": "#f3f3f3",
-        "dorado":"#BFA181",
+        foreground: "#19152c",
+        primary: "#532874",
+        secondary: "#6bc5d1",
+        success: "#6dbd8f",
+        matchcolor: "#19152c",
       },
       width: {
         '80vw': '80vw', // 80% del ancho de la pantalla

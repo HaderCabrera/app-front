@@ -31,7 +31,6 @@ const ProjectCard = ({
       <motion.div
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
-        onHoverStart={() => console.log('hover started!')}
         className='p-5 rounded-2xl w-full cursor-pointer'
       >
         <div className='relative w-auto h-auto'>
@@ -55,8 +54,8 @@ const ProjectCard = ({
         </div>
 
         <div className='mt-5'>
-          <h3 className=''>{name}</h3>
-          <p className='mt-2  '>{description}</p>
+          <h1>{name}</h1>
+          <p className='mt-2'>{description}</p>
         </div>
 
         <div className='mt-4 flex flex-wrap gap-2'>
@@ -76,7 +75,7 @@ const ProjectCard = ({
 
 const Works = () => {
   return (
-    <div className={`${stylesT.sectionLayout}`} id="servicios">
+    <section className={`${stylesT.sectionLayout}`} id="servicios">
       {/* Sección de Título y Descripción */}
       <div className='flex flex-col items-center gap-5 p-8'>
         <h1 className='text-5xl'>Why We Shine ?</h1>
@@ -91,7 +90,7 @@ const Works = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
