@@ -4,7 +4,7 @@
 }
 
 .btn button:hover{
-    background-color: var(--primary);
+    opacity: 0.87;
 }
 
 .btn .amplify-tabs{
@@ -14,7 +14,10 @@
 .btn .data-amplify-router button {
     border-color: brown;
   }
- 
+
+.btn button:focus{
+    opacity: 0.87;
+}
 
 /*       DECORACION MODO OBSCURO       */
 [data-theme="dark"] .btn button{

@@ -1,11 +1,9 @@
 'use client'
 
-import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
 
-import { hero_img } from '@/../public/assets/index'
+import  { useEffect, useState } from 'react';
 
-import MotionComponent from '@/components/motion/MotionText';
+
 import { motion, useAnimation } from "framer-motion";
 
 import { useMediaQuery } from "react-responsive";
@@ -46,30 +44,29 @@ const Hero = () => {
 
 
   return (
-    <div id="home" className={`flex flex-col mt-20 md:flex-row items-center justify-between 
-      ${  scrolled ? "bg-primary" : "bg-transparent"
-      }`}
-    >
-      <div className='h-[40vh] w-full text-center'>
-          HERO
-      </div>
-      {/* <motion.div className="md:w-1/2 bg-slate-300 p-5 rounded-lg"
-        animate={controls}
-        initial={false}
-        transition={{ ease: "easeOut", duration: 3 }}  
+    <div className="relative flex items-center justify-center overflow-hidden h-[40vh] md:h-[75vh]">
+      {/* Video de fondo */}
+      <video
+        autoPlay
+        loop
+        muted
+        className="absolute w-full h-full object-cover"
       >
-        <h1 className={`${Jero.title} text-4xl md:text-5xl mb-4`}>
-          Potencia tu productividad con Aeteris
-        </h1>
-        <MotionComponent />
-        <p className={`${Jero.hero_description} mb-6`}>
-          Diseñado para equipos ágiles que buscan resultados extraordinarios.
-        </p>
-        <button className="px-6 py-3 rounded-lg ">
-          Comenzar
+        <source src="/assets/heroVideo.mp4" type="video/mp4" />
+        Tu navegador no soporta videos HTML5.
+      </video>
+
+      {/* Contenido en la esquina inferior izquierda */}
+      <div className="absolute bottom-4 left-4 md:bottom-10 md:left-10 z-10">
+        {/* Texto pequeño */}
+        <p className="text-sm md:text-base">Unica fuente de verdad</p>
+
+        {/* Botón */}
+        <button className="mt-2 py-2 px-4 rounded-lg transition duration-300">
+          Get Start
         </button>
-      </motion.div> */}
-    </div >
+      </div>
+    </div>
   );
 };
 
