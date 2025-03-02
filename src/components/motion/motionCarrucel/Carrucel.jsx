@@ -8,12 +8,7 @@ const phrases = ["Innovación", "Tecnología", "Análisis", "Optimización", "Tr
 
 export default function ContinuousTimelineAnimation() {
   return (
-    <div className="relative overflow-hidden w-[80vw] mx-auto h-20 flex items-center">
-      {/* Máscara de difuminado
-      <div className="absolute inset-0 pointer-events-none flex items-center z-10">
-        <div className={`${MotionText.sombra_r} absolute left-0 w-40 h-8`}></div>
-        <div className={`${MotionText.sombra_l} absolute right-0 w-40 h-8`}></div>
-      </div> */}
+    <div className= {`relative overflow-hidden w-[100vw] sm:w-[90vw] md:w-[80vw] mx-auto h-10 sm:h-20 md:h-30  ${MotionText.text} flex items-center`}>
 
       {/* Primer arreglo (sin delay) */}
       <motion.div
@@ -28,7 +23,7 @@ export default function ContinuousTimelineAnimation() {
         }}
       >
         {phrases.map((phrase, index) => (
-          <span key={index} className={`px-4 rounded-full mx-5 opacity-3 shadow-lg`}>
+          <span key={index} className={`text-base md:text-lg lg:text-xl px-4 rounded-full mx-5 shadow-lg ${MotionText.bgLight}`}>
             {phrase}
           </span>
         ))}
@@ -48,7 +43,7 @@ export default function ContinuousTimelineAnimation() {
         }}
       >
         {phrases.map((phrase, index) => (
-          <span key={index} className={`px-4 rounded-full mx-5 opacity-3 shadow-lg`}>
+          <span key={index} className={`text-base md:text-lg lg:text-xl px-4 rounded-full mx-5 shadow-lg ${MotionText.bgLight}`}>
             {phrase}
           </span>
         ))}
