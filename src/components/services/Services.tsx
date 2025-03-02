@@ -31,13 +31,13 @@ const ProjectCard = ({
       <motion.div
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
-        className='p-5 rounded-2xl w-full cursor-pointer'
+        className='rounded-2xl w-full cursor-pointer p-1 sm:p-3 md:p-5'
       >
         <div className='relative w-auto h-auto'>
           <img
             src={image.src}
             alt='project_image'
-            className='w-30 h-48 lg:h-40 object-cover rounded-2xl'
+            className='w-full h-full object-cover md:object-contain rounded-2xl max-w-[200px]'
           />
           <div className='absolute inset-0 flex justify-end m-3'>
             <div
@@ -75,16 +75,16 @@ const ProjectCard = ({
 
 const Works = () => {
   return (
-    <section className={`${stylesT.sectionLayout}`} id="servicios">
+    <section className={`${stylesT.sectionLayout} ${stylesT.textResponsive} ${stylesT.gapResponsive}`} id="servicios">
       {/* Sección de Título y Descripción */}
-      <div className='flex flex-col items-center gap-5 p-8'>
-        <h1 className='text-5xl'>Why We Shine ?</h1>
+      <div className={`flex flex-col items-center  ${stylesT.textResponsive} ${stylesT.gapResponsive}`}>
+        <h1 className='text-5xl'>Nuestros servicios</h1>
         <p>En un mundo digital en constante evolución, ofrecemos soluciones innovadoras diseñadas para potenciar tu negocio y llevarlo al siguiente nivel. Nuestros servicios combinan tecnología de vanguardia, creatividad y experiencia práctica para ayudarte a alcanzar tus objetivos, sin importar el tamaño o la industria de tu proyecto.</p>
       </div>
 
       {/* Sección de Tarjetas */}
       <div>
-        <div className="grid grid-cols-2 gap-2 sm:grid-cols-2 sm:gap-6 md:grid-cols-2 lg:grid-cols-3  mx-auto">
+        <div className="grid grid-cols-2 gap-1 sm:grid-cols-2 sm:gap-6 md:grid-cols-2 lg:grid-cols-3  mx-auto">
           {projects.map((project, index) => (
             <ProjectCard key={`project-${index}`} index={index} {...project} />
           ))}

@@ -1,22 +1,16 @@
-.btn button{
+/* .btn button{
     background-color: var(--background2);
     color: var(--foreground);
 }
 
 .btn button:hover{
-    opacity: 0.87;
-}
+    background-color: aqua;
+} */
 
-.btn .amplify-tabs{
+
+[data-theme="ligth"] .btn button{
     background-color: var(--foreground);
-}
-
-.btn .data-amplify-router button {
-    border-color: brown;
-  }
-
-.btn button:focus{
-    opacity: 0.87;
+    color: var(--background2);
 }
 
 /*       DECORACION MODO OBSCURO       */
