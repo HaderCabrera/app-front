@@ -78,7 +78,7 @@ const Navbar = () => {
         <Link href="/">
           <div className="flex items-center space-x-1 rtl:space-x-reverse">
             <Image
-              src="/assets/logo_boton.png"
+              src="/assets/logo_navbar.png"
               width={100}
               height={32}
               className="h-8 object-contain"

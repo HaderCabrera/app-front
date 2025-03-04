@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        'xxl': '1200px', // Nuevo breakpoint para pantallas ≥ 1200px
+      },
       spacing: {
         'section-padding-lg': '8rem',
         'section-padding-md': '4rem',

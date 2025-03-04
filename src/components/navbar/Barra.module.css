@@ -1,9 +1,10 @@
 .nav_ul {
     background-color: var(--background2);
+
 }
 
-.link_nav {
-    color: var(--background2);
+[data-theme="light"] .link_nav {
+    color: var(--foreground);
 }
 
 

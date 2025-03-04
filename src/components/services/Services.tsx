@@ -37,9 +37,9 @@ const ProjectCard = ({
           <img
             src={image.src}
             alt='project_image'
-            className='w-full h-full object-cover md:object-contain rounded-2xl max-w-[200px]'
+            className='w-full h-[100px] object-cover object-contain rounded-2xl max-w-[200px]'
           />
-          <div className='absolute inset-0 flex justify-end m-3'>
+          <div className='absolute inset-0 flex justify-end'>
             <div
               onClick={() => window.open(source_code_link, "_blank")}
               className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
@@ -58,7 +58,7 @@ const ProjectCard = ({
           <p className='mt-2'>{description}</p>
         </div>
 
-        <div className='mt-4 flex flex-wrap gap-2'>
+        {/* <div className='mt-4 flex flex-wrap gap-2'>
           {tags.map((tag) => (
             <p
               key={`${name}-${tag.name}`}
@@ -67,7 +67,7 @@ const ProjectCard = ({
               #{tag.name}
             </p>
           ))}
-        </div>
+        </div> */}
       </motion.div>
     </div>
   );
@@ -78,8 +78,13 @@ const Works = () => {
     <section className={`${stylesT.sectionLayout} ${stylesT.textResponsive} ${stylesT.gapResponsive}`} id="servicios">
       {/* Sección de Título y Descripción */}
       <div className={`flex flex-col items-center  ${stylesT.textResponsive} ${stylesT.gapResponsive}`}>
-        <h1 className='text-5xl'>Nuestros servicios</h1>
-        <p>En un mundo digital en constante evolución, ofrecemos soluciones innovadoras diseñadas para potenciar tu negocio y llevarlo al siguiente nivel. Nuestros servicios combinan tecnología de vanguardia, creatividad y experiencia práctica para ayudarte a alcanzar tus objetivos, sin importar el tamaño o la industria de tu proyecto.</p>
+        <h1 className={`${stylesT.titleSectionResponsive}`}>Nuestros servicios</h1>
+        <p className="text-justify">
+          En un mundo digital en constante evolución, ofrecemos soluciones innovadoras diseñadas para potenciar tu negocio y llevarlo al siguiente nivel.
+          <span className="hidden sm:inline">
+            Nuestros servicios combinan tecnología de vanguardia, creatividad y experiencia práctica para ayudarte a alcanzar tus objetivos, sin importar el tamaño o la industria de tu proyecto.
+          </span>
+        </p>
       </div>
 
       {/* Sección de Tarjetas */}
