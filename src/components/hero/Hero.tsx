@@ -54,16 +54,14 @@ const Hero = () => {
         Tu navegador no soporta videos HTML5.
       </video>
 
-      {/* Contenido en la esquina inferior izquierda */}
-      <div className="absolute bottom-4 left-4 md:bottom-10 md:left-10 z-10">
-        {/* Texto pequeño */}
-        <p className="text-sm md:text-base">Unica fuente de verdad (animar)</p>
 
-        {/* Botón */}
+      {/* <div className="absolute bottom-4 left-4 md:bottom-10 md:left-10 z-10">
+        <p className="text-sm md:text-base">Unica fuente de verdad (animar)</p>
         <button className="mt-2 py-2 px-4 rounded-lg transition duration-300">
           Get Start
         </button>
-      </div>
+      </div> */}
+      
     </div>
   );
 };

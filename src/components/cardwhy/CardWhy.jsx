@@ -3,7 +3,6 @@ import {stylesT} from "@/components/stylesT";
 
 import { whyUs } from '@/constants/index'
 
-
 import WhyCard from './WhyCard.module.css'
 
 
@@ -14,10 +13,10 @@ function CardWhy() {
   const iconos = [PlayCircleIcon, PlusCircleIcon, ArrowDownCircleIcon]
 
   return (
-    <section className= {`${stylesT.sectionLayout} ${stylesT.textResponsive} ${stylesT.gapResponsive} `}> 
+    <section className= {`${stylesT.sectionLayout} ${stylesT.textResponsive} ${stylesT.gapResponsive}`}> 
       {/* Sección del título y descripción */}
       <div className={`flex flex-col items-center gap-5 ${stylesT.textResponsive} ${stylesT.gapResponsive}`}>
-        <h1 className='text-5xl'>Porque nosotros ?</h1>
+        <h1 className={`${stylesT.titleSectionResponsive}`}>Porque nosotros ?</h1>
         <p className=''>
           Leverage the power of AI to automatically optimize your purchases, ensuring you get the best value for your business with every transaction.
         </p>
@@ -30,16 +29,20 @@ function CardWhy() {
           return (
             <div
               key={why.id}
-              className={` flex flex-col gap-3 p-2
+              className={` sm:flex sm:flex-col sm:gap-3 p-2
                 ${why.id !== 2 ? "border-none" : `
                   sm:pr-3 sm:pl-3
                   border-t-4 border-b-4 
                   md:border-t-0 md:border-b-0 md:border-l-4 md:border-r-4`}
+                  ${'flex flex-row gap-3'}
                   `}
             >
               {<IconComponent className={`${WhyCard.ico} w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20`} />}
-              <h1>{why.title}</h1>
-              <p>{why.des}</p>
+              <div>
+                <p className="text-justify">{why.des}</p>
+                <h1>{why.title}</h1>
+              </div>
+
             </div>
           );
         })}
