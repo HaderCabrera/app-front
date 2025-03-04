@@ -82,7 +82,7 @@ p {
   }
 
   [data-theme="dark"] section{
-    background: var(--background);
+    background: var(--background2);
   }
 
 
