@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import styles from "./Plans.module.css";
 import { stylesT } from "../stylesT";
 import { useState } from "react";
 import { plansA, plansB } from "@/constants/index";
@@ -17,32 +16,28 @@ export default function SharedLayoutAnimation() {
   const [selectedTab, setSelectedTab] = useState(tabs[0].data);
 
   return (
-    <section id="tarifas" className={`${stylesT.sectionLayout}`}>
-      <nav>
-        <ul className={styles.nav}>
+    <section id="tarifas" className={`${stylesT.sectionLayout} gap-4`}>
+      {/* Barra de Navegación */}
+      <nav className="h-[40px]">
+        <div className="flex bg-gray-100 rounded-full p-1 overflow-hidden">
           {tabs.map((item) => (
-            <motion.li
+            <motion.button
               key={item.label}
-              initial={false}
-              animate={{
-                backgroundColor:
-                  item.data === selectedTab ? "#eee" : "#eee0",
-              }}
-              className={styles.tab}
-              onClick={() => setSelectedTab(item.data)} // Actualiza el estado con el array correspondiente
+              onClick={() => setSelectedTab(item.data)}
+              className={`flex-1 py-2 px-4 text-sm font-medium rounded-full transition-all duration-300 focus:outline-none ${
+                item.data === selectedTab
+                  ? "bg-white text-foreground shadow-md"
+                  : "bg-transparent text-gray-400 hover:bg-gray-200"
+              }`}
+              whileTap={{ scale: 0.95 }}
             >
-              {`${item.label}`}
-              {item.data === selectedTab ? (
-                <motion.div
-                  className={styles.underline}
-                  layoutId="underline"
-                  id="underline"
-                />
-              ) : null}
-            </motion.li>
+              {item.label}
+            </motion.button>
           ))}
-        </ul>
+        </div>
       </nav>
+
+      {/* Contenido Principal */}
       <main>
         <AnimatePresence mode="wait">
           <motion.div
@@ -53,23 +48,32 @@ export default function SharedLayoutAnimation() {
             transition={{ duration: 0.2 }}
           >
             {selectedTab ? (
-              <div className={`flex flex-col md:flex-row lg:gap-20 gap-6 p-6 sm:p-6 md:p-8 rounded-lg`}>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {/* Renderiza los planes */}
                 {selectedTab.map((plan) => (
-                  <div key={plan.id}>
-                    <h2>{plan.name}</h2>
-                    <p>
-                      <span className={`text-3xl`}>{plan.price}</span>/mes
+                  <div
+                    key={plan.id}
+                    className="p-6 bg-white rounded-lg shadow-md text-center"
+                  >
+                    <h2 className="text-xl font-bold">{plan.name}</h2>
+                    <p className="mt-2">
+                      <span className="text-3xl font-bold">{plan.price}</span>
+                      <span className="text-sm text-gray-500">/mes</span>
                     </p>
-                    <ul className="list-disc">
+
+                    <ul className="mt-4 space-y-2 text-left">
                       {plan.features.map((caract) => (
-                        <li key={caract}>{caract}</li>
+                        <li key={caract} className="flex items-center gap-2">
+                          <span className="text-green-500">✓</span>
+                          <span className="text-gray-700">{caract}</span>
+                        </li>
                       ))}
                     </ul>
+
                     <motion.button
-                      whileHover={{ scale: 1.1 }}
+                      whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="w-full p-1"
+                      className="w-full mt-4 py-2  rounded-full font-medium transition-colors"
                     >
                       Get Started
                     </motion.button>

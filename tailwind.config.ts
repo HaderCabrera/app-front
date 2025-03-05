@@ -29,6 +29,7 @@ const config: Config = {
         secondary: "#6bc5d1",
         success: "#6dbd8f",
         matchcolor: "#19152c",
+        claro: "#ededed",
       },
       width: {
         '80vw': '80vw', // 80% del ancho de la pantalla

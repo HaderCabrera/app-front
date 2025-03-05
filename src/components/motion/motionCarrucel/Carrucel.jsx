@@ -8,7 +8,7 @@ const phrases = ["Innovación", "Tecnología", "Análisis", "Optimización", "Tr
 
 export default function ContinuousTimelineAnimation() {
   return (
-    <div className= {`relative overflow-hidden w-[100vw] sm:w-[90vw] md:w-[80vw] mx-auto h-10 sm:h-20 md:h-30  ${MotionText.text} flex items-center`}>
+    <div className= {`relative overflow-hidden w-[100vw]  sm:w-[90vw] md:w-[80vw] mx-auto h-10 sm:h-20 md:h-30  ${MotionText.text} flex items-center`}>
 
       {/* Primer arreglo (sin delay) */}
       <motion.div

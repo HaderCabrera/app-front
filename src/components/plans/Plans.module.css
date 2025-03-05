@@ -16,15 +16,13 @@
   
   .nav {
     display: flex;
-    background: #fdfdfd;
-    border-radius: 10px;
-    border-bottom: 1px solid #eeeeee;
-    padding: 4px;
-    gap: 1rem;
+    background: var(--foreground);
+    gap: 2px;
+    padding: 2px;
   }
 
   .nav li{
-    padding: 5px;
+    padding: 2px;
   }
   
   .tabsStyles {
@@ -34,9 +32,6 @@
   }
   
   .tab {
-    border-radius: 5px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
     position: relative;
     background: white;
     cursor: pointer;
@@ -65,3 +60,4 @@
     flex: 1;
   }
   
+

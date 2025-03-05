@@ -1,3 +1,5 @@
+import { CurrencyDollarIcon, SquaresPlusIcon, CheckIcon } from '@heroicons/react/24/solid';
+
 import {
   service,
   service1,
@@ -198,7 +200,7 @@ export const projects = [
 export const plansA = [
   {
     id: 1,
-    label: "Basico",
+    name: "Basico",
     price: "$9.99",
     features: [
       "Acceso a funciones básicas",
@@ -213,7 +215,7 @@ export const plansA = [
   },
   {
     id: 2,
-    label: "Profesional",
+    name: "Profesional",
     price: "$29.99",
     features: [
       "Acceso a todas las funciones",
@@ -229,7 +231,7 @@ export const plansA = [
   },
   {
     id: 3,
-    label: "Empresarial",
+    name: "Empresarial",
     price: "$49.99",
     features: [
       "Acceso ilimitado a todas las funciones",
@@ -251,7 +253,7 @@ export const plansA = [
 export const plansB = [
   {
     id: 1,
-    label: "Basico",
+    name: "Basico",
     price: "$27.99",
     features: [
       "Acceso a funciones básicas",
@@ -266,7 +268,7 @@ export const plansB = [
   },
   {
     id: 2,
-    label: "Profesional",
+    name: "Profesional",
     price: "$31.47",
     features: [
       "Acceso a todas las funciones",
@@ -282,7 +284,7 @@ export const plansB = [
   },
   {
     id: 3,
-    label: "Empresarial",
+    name: "Empresarial",
     price: "$92.64",
     features: [
       "Acceso ilimitado a todas las funciones",
@@ -299,3 +301,73 @@ export const plansB = [
     icono: "🫐",
   },
 ];
+
+export const services = [
+  {
+    id: 1,
+    title: "Monitoreo en Tiempo Real",
+    description: "Analiza tu data en tiempo real desde cualquier dispotisivo con acceso a internet",
+    icon: <CurrencyDollarIcon className='h-12 w-12'/>,
+    beneficios: [
+      "Eficiencia energética (kW generados vs. consumo).",
+      "Calidad del aceite (resultados de las pruebas de Motul).",
+      "Temperaturas promedio de operación."
+    ],
+  },
+  {
+    id: 2,
+    title: "Histórico de Datos y Tendencias",
+    description: "Analiza tu data en tiempo real desde cualquier dispotisivo con acceso a internet",
+    icon: <CurrencyDollarIcon className='h-12 w-12'/>,
+    beneficios: [
+      "Evolución de la temperatura de los motores.",
+      "Cambios en la calidad del aceite (basado en las pruebas de Motul).",
+      "Fluctuaciones en la generación de energía."
+    ],
+  },
+  {
+    id: 3,
+    title: "Dashboard de Estado de Máquinas",
+    description: "Analiza tu data en tiempo real desde cualquier dispotisivo con acceso a internet",
+    icon: <CurrencyDollarIcon className='h-12 w-12'/>,
+    beneficios: [
+      "Indicadores de estado (verde, amarillo, rojo) basados en umbrales predefinidos.",
+      "Resumen de la generación de energía total en kW.",
+      "Alertas visuales para máquinas que requieren atención."
+    ],
+  },
+  {
+    id: 4,
+    title: "Comparación de Rendimiento entre Máquinas",
+    description: "Analiza tu data en tiempo real desde cualquier dispotisivo con acceso a internet",
+    icon: <CurrencyDollarIcon className='h-12 w-12'/>,
+    beneficios: [
+      "Eficiencia energética (kW generados vs. consumo).",
+      "Calidad del aceite (resultados de las pruebas de Motul).",
+      "Temperaturas promedio de operación."
+    ],
+  }
+];
+
+export const faqs = [
+  {
+    question: "¿Qué servicios ofrecen?",
+    answer:
+      "Ofrecemos una amplia gama de servicios, incluyendo consultoría, desarrollo de software, marketing digital y soporte técnico.",
+  },
+  {
+    question: "¿Cuánto tiempo toma completar un proyecto?",
+    answer:
+      "El tiempo de finalización depende del alcance del proyecto. Generalmente, nuestros proyectos tardan entre 2 y 6 semanas.",
+  },
+  {
+    question: "¿Ofrecen soporte después de completar un proyecto?",
+    answer:
+      "Sí, ofrecemos soporte técnico continuo para asegurarnos de que tu proyecto funcione sin problemas.",
+  },
+  {
+    question: "¿Cómo puedo contactarlos?",
+    answer:
+      "Puedes contactarnos a través de nuestro formulario en línea, correo electrónico o redes sociales.",
+  },
+]
