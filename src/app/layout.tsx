@@ -1,8 +1,8 @@
 // src/app/layout.tsx
 import type { Metadata } from "next";
-import { Inter, Poppins, Open_Sans } from "next/font/google";
+import { Inter, Poppins, Open_Sans, Montserrat } from "next/font/google";
 
-import '@/app/styles/globals.css';
+import "@/app/styles/globals.css";
 
 import Auth from "../components/auth/Auth";
 import ClientNavBar from "@/components/navbar/ClientNavBar";
@@ -13,30 +13,32 @@ const poppins = Poppins({
   subsets: ["latin"],
   variable: "--font-poppins",
 });
-
 const openSans = Open_Sans({
   subsets: ["latin"],
   variable: "--font-open-sans",
 });
+const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat" });
 
 export const metadata: Metadata = {
   title: "Copower Dashboard",
   description: "App web, managed your analisis data company",
   icons: {
-    icon: '@/../favicon.ico',
+    icon: "@/../favicon.ico",
   },
 };
 
 export default function RootLayout({
   children,
+  params: { locale }, // Obtén el idioma actual desde los parámetros de la ruta
 }: Readonly<{
   children: React.ReactNode;
+  params: { locale: string }; // Asegúrate de que `locale` esté en los parámetros
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} ${poppins.variable} ${openSans.variable} font-sans`}>
+    <html lang={locale}> {/* Usa el idioma actual en el atributo `lang` */}
+      <body className={`${montserrat.variable} ${poppins.variable} ${openSans.variable} font-[--font-inter]`}>
         <Auth>
-          <ClientNavBar /> {/* Usa el nuevo componente aquí */}
+          <ClientNavBar />
           {children}
         </Auth>
       </body>
