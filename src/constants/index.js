@@ -32,18 +32,18 @@ export const navLinks = [
 export const whyUs = [
   {
     id: 1,
-    title: "Centraliza tu data",
-    des: "No quemes tiempo pensado en la arquitectura de tu data, dejanos eso a nosotros",
+    title: "Centralización de Datos",
+    des: "No gastes tiempo diseñando arquitecturas complejas. Nosotros gestionamos tu data como única fuente de verdad.",
   },
   {
     id: 2,
-    title: "Realtime analisis",
-    des: "Todos nuestros informes y tendencias se realizan con la data mas actualizada en la nucbe",
+    title: "Análisis en Tiempo Real",
+    des: "Todos nuestros dashboards y tendencias se generan con datos actualizados al instante desde la nube.",
   },
   {
     id: 3,
-    title: "Agilidad operativa",
-    des: "Toma deciciones en poco tiempo gracias a el analisis y generacion de reportes",
+    title: "Agilidad Operativa",
+    des: "Toma decisiones estratégicas en minutos gracias a nuestro análisis predictivo y generación automática de graficas.",
   },
 ];
 
@@ -200,52 +200,55 @@ export const projects = [
 export const plansA = [
   {
     id: 1,
-    name: "Basico",
-    price: "$9.99",
+    name: "Básico",
+    price: "$27.99",
     features: [
-      "Acceso a funciones básicas",
-      "Soporte por correo electrónico",
-      "5 proyectos por cuenta",
-      "Almacenamiento de 10 GB",
+      "Monitoreo en tiempo real de 5 máquinas",
+      "Soporte técnico por correo (24h respuesta)",
+      "5 equipos industriales conectados",
+      "Almacenamiento cloud de 10 GB para datos operativos",
+      "Informes mensuales de eficiencia energética",
     ],
-    isFeatured: false, // Indica si este plan está destacado
+    isFeatured: false,
     buttonLabel: "Seleccionar Plan",
-    buttonColor: "bg-blue-500 hover:bg-blue-600", // Color del botón (Tailwind CSS)
-    recommendedFor: "Individuos o pequeños equipos", // A quién está dirigido
+    buttonColor: "bg-blue-500 hover:bg-blue-600",
+    recommendedFor: "Talleres pequeños o startups industriales",
   },
   {
     id: 2,
     name: "Profesional",
-    price: "$29.99",
+    price: "$31.47",
     features: [
-      "Acceso a todas las funciones",
-      "Soporte prioritario",
-      "20 proyectos por cuenta",
-      "Almacenamiento de 50 GB",
-      "Integración con herramientas externas",
+      "Monitoreo en tiempo real ilimitado",
+      "Análisis predictivo de fallos mecánicos",
+      "Almacenamiento cloud de 50 GB",
+      "Soporte prioritario (4h respuesta)",
+      "Dashboard personalizable con alertas",
+      "Pruebas de calidad de aceite Motul incluidas",
     ],
-    isFeatured: true, // Este plan está destacado
+    isFeatured: true,
     buttonLabel: "Recomendado",
-    buttonColor: "bg-green-500 hover:bg-green-600", // Color del botón (Tailwind CSS)
-    recommendedFor: "Profesionales y empresas medianas",
+    buttonColor: "bg-green-500 hover:bg-green-600",
+    recommendedFor: "Empresas medianas con flotas de maquinaria",
   },
   {
     id: 3,
     name: "Empresarial",
-    price: "$49.99",
+    price: "$92.64",
     features: [
-      "Acceso ilimitado a todas las funciones",
-      "Soporte 24/7",
-      "Proyectos ilimitados",
-      "Almacenamiento de 200 GB",
-      "Capacitación personalizada",
-      "Asignación de cuentas de equipo",
+      "Monitoreo multi-sitio en tiempo real",
+      "Análisis predictivo con IA avanzada",
+      "Integración API con sistemas SCADA/PLC",
+      "Almacenamiento cloud de 200 GB",
+      "Soporte 24/7 con ingenieros especializados",
+      "Capacitación técnica personalizada",
+      "Certificación de seguridad industrial (ISO 27001)",
+      "Acceso a históricos de 24 meses",
     ],
-    isFeatured: false, // Indica si este plan está destacado
+    isFeatured: false,
     buttonLabel: "Seleccionar Plan",
-    buttonColor: "bg-purple-500 hover:bg-purple-600", // Color del botón (Tailwind CSS)
-    recommendedFor: "Grandes empresas y corporaciones",
-    icono: "🫐",
+    buttonColor: "bg-purple-500 hover:bg-purple-600",
+    recommendedFor: "Corporaciones con operaciones industriales complejas",
   },
 ];
 
@@ -253,52 +256,56 @@ export const plansA = [
 export const plansB = [
   {
     id: 1,
-    name: "Basico",
-    price: "$27.99",
+    name: "Básico",
+    price: "$47.99",
     features: [
-      "Acceso a funciones básicas",
-      "Soporte por correo electrónico",
-      "5 proyectos por cuenta",
-      "Almacenamiento de 10 GB",
+      "Monitoreo en tiempo real de 5 máquinas",
+      "Soporte técnico por correo (24h respuesta)",
+      "5 equipos industriales conectados",
+      "Almacenamiento cloud de 10 GB para datos operativos",
+      "Informes mensuales de eficiencia energética",
     ],
-    isFeatured: false, // Indica si este plan está destacado
+    isFeatured: false,
     buttonLabel: "Seleccionar Plan",
-    buttonColor: "bg-blue-500 hover:bg-blue-600", // Color del botón (Tailwind CSS)
-    recommendedFor: "Individuos o pequeños equipos", // A quién está dirigido
+    buttonColor: "bg-blue-500 hover:bg-blue-600",
+    recommendedFor: "Talleres pequeños o startups industriales",
   },
   {
     id: 2,
     name: "Profesional",
-    price: "$31.47",
+    price: "$61.47",
     features: [
-      "Acceso a todas las funciones",
-      "Soporte prioritario",
-      "20 proyectos por cuenta",
-      "Almacenamiento de 50 GB",
-      "Integración con herramientas externas",
+      "Monitoreo en tiempo real ilimitado",
+      "Análisis predictivo de fallos mecánicos",
+      "Integración con ERPs industriales",
+      "Almacenamiento cloud de 50 GB",
+      "Soporte prioritario (4h respuesta)",
+      "Dashboard personalizable con alertas",
+      "Pruebas de calidad de aceite Motul incluidas",
     ],
-    isFeatured: true, // Este plan está destacado
+    isFeatured: true,
     buttonLabel: "Recomendado",
-    buttonColor: "bg-green-500 hover:bg-green-600", // Color del botón (Tailwind CSS)
-    recommendedFor: "Profesionales y empresas medianas",
+    buttonColor: "bg-green-500 hover:bg-green-600",
+    recommendedFor: "Empresas medianas con flotas de maquinaria",
   },
   {
     id: 3,
     name: "Empresarial",
-    price: "$92.64",
+    price: "$122.64",
     features: [
-      "Acceso ilimitado a todas las funciones",
-      "Soporte 24/7",
-      "Proyectos ilimitados",
-      "Almacenamiento de 200 GB",
-      "Capacitación personalizada",
-      "Asignación de cuentas de equipo",
+      "Monitoreo multi-sitio en tiempo real",
+      "Análisis predictivo con IA avanzada",
+      "Integración API con sistemas SCADA/PLC",
+      "Almacenamiento cloud de 200 GB",
+      "Soporte 24/7 con ingenieros especializados",
+      "Capacitación técnica personalizada",
+      "Certificación de seguridad industrial (ISO 27001)",
+      "Acceso a históricos de 24 meses",
     ],
-    isFeatured: false, // Indica si este plan está destacado
+    isFeatured: false,
     buttonLabel: "Seleccionar Plan",
-    buttonColor: "bg-purple-500 hover:bg-purple-600", // Color del botón (Tailwind CSS)
-    recommendedFor: "Grandes empresas y corporaciones",
-    icono: "🫐",
+    buttonColor: "bg-purple-500 hover:bg-purple-600",
+    recommendedFor: "Corporaciones con operaciones industriales complejas",
   },
 ];
 
@@ -306,45 +313,45 @@ export const services = [
   {
     id: 1,
     title: "Monitoreo en Tiempo Real",
-    description: "Analiza tu data en tiempo real desde cualquier dispotisivo con acceso a internet",
+    description: "Analiza tus datos en tiempo real desde cualquier dispositivo con acceso a internet",
     icon: <CurrencyDollarIcon className='h-12 w-12'/>,
     beneficios: [
-      "Eficiencia energética (kW generados vs. consumo).",
-      "Calidad del aceite (resultados de las pruebas de Motul).",
-      "Temperaturas promedio de operación."
+      "Eficiencia energética (kW generados vs. consumo)",
+      "Calidad del aceite (resultados de las pruebas de Motul)",
+      "Temperaturas promedio de operación"
     ],
   },
   {
     id: 2,
     title: "Histórico de Datos y Tendencias",
-    description: "Analiza tu data en tiempo real desde cualquier dispotisivo con acceso a internet",
+    description: "Visualiza la evolución de tus métricas a lo largo del tiempo",
     icon: <CurrencyDollarIcon className='h-12 w-12'/>,
     beneficios: [
-      "Evolución de la temperatura de los motores.",
-      "Cambios en la calidad del aceite (basado en las pruebas de Motul).",
-      "Fluctuaciones en la generación de energía."
+      "Evolución de la temperatura de los motores",
+      "Cambios en la calidad del aceite (basado en pruebas de Motul)",
+      "Fluctuaciones en la generación de energía"
     ],
   },
   {
     id: 3,
     title: "Dashboard de Estado de Máquinas",
-    description: "Analiza tu data en tiempo real desde cualquier dispotisivo con acceso a internet",
+    description: "Panel de control con indicadores visuales de tus equipos",
     icon: <CurrencyDollarIcon className='h-12 w-12'/>,
     beneficios: [
-      "Indicadores de estado (verde, amarillo, rojo) basados en umbrales predefinidos.",
-      "Resumen de la generación de energía total en kW.",
-      "Alertas visuales para máquinas que requieren atención."
+      "Indicadores de estado (verde, amarillo, rojo) basados en umbrales predefinidos",
+      "Resumen de generación energética total en kW",
+      "Alertas visuales para mantenimiento preventivo"
     ],
   },
   {
     id: 4,
     title: "Comparación de Rendimiento entre Máquinas",
-    description: "Analiza tu data en tiempo real desde cualquier dispotisivo con acceso a internet",
+    description: "Analiza el desempeño relativo de tus equipos industriales",
     icon: <CurrencyDollarIcon className='h-12 w-12'/>,
     beneficios: [
-      "Eficiencia energética (kW generados vs. consumo).",
-      "Calidad del aceite (resultados de las pruebas de Motul).",
-      "Temperaturas promedio de operación."
+      "Comparación de eficiencia energética entre equipos",
+      "Análisis de calidad de aceite Motul entre máquinas",
+      "Monitorización de temperaturas operativas"
     ],
   }
 ];
@@ -353,21 +360,26 @@ export const faqs = [
   {
     question: "¿Qué servicios ofrecen?",
     answer:
-      "Ofrecemos una amplia gama de servicios, incluyendo consultoría, desarrollo de software, marketing digital y soporte técnico.",
+      "Especializamos en integración de datos industriales en la nube, monitoreo en tiempo real de maquinaria, análisis predictivo de eficiencia energética y soporte técnico especializado para mantenimiento de sistemas.",
   },
   {
-    question: "¿Cuánto tiempo toma completar un proyecto?",
+    question: "¿Cuánto tiempo toma implementar la integración de datos?",
     answer:
-      "El tiempo de finalización depende del alcance del proyecto. Generalmente, nuestros proyectos tardan entre 2 y 6 semanas.",
+      "Depende de la complejidad de tus sistemas. Proyectos estándar de integración cloud se completan en 4-8 semanas, incluyendo migración de datos y configuración de dashboards.",
   },
   {
-    question: "¿Ofrecen soporte después de completar un proyecto?",
+    question: "¿Ofrecen soporte post-implementación?",
     answer:
-      "Sí, ofrecemos soporte técnico continuo para asegurarnos de que tu proyecto funcione sin problemas.",
+      "Sí, brindamos soporte 24/7 para mantenimiento de infraestructura cloud, actualizaciones de análisis predictivo y resolución de incidencias técnicas.",
   },
   {
-    question: "¿Cómo puedo contactarlos?",
+    question: "¿Cómo garantizan la seguridad de los datos en la nube?",
     answer:
-      "Puedes contactarnos a través de nuestro formulario en línea, correo electrónico o redes sociales.",
+      "Usamos protocolos de encriptación de extremo a extremo y cumplimos con estándares internacionales como GDPR y SOC 2 para proteger tu información industrial.",
   },
-]
+  {
+    question: "¿Pueden integrarse con mis sistemas existentes?",
+    answer:
+      "Nuestra plataforma es compatible con sistemas SCADA, PLCs y ERPs industriales. Realizamos un análisis previo para garantizar una integración fluida.",
+  },
+];

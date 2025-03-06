@@ -16,9 +16,9 @@ function CardWhy() {
     <section className= {`${stylesT.sectionLayout} ${stylesT.textResponsive} ${stylesT.gapResponsive}`}> 
       {/* Sección del título y descripción */}
       <div className={`flex flex-col items-center gap-5 ${stylesT.textResponsive} ${stylesT.gapResponsive}`}>
-        <h1 className={`${stylesT.titleSectionResponsive}`}>Porque nosotros ?</h1>
+        <h1 className={`${stylesT.titleSectionResponsive}`}>Por que nosotros?</h1>
         <p className=''>
-          Leverage the power of AI to automatically optimize your purchases, ensuring you get the best value for your business with every transaction.
+        Optimiza recursos con nuestra única fuente de verdad: desde la reducción de costos energéticos hasta la prevención de fallas mediante análisis predictivo.
         </p>
       </div>
 

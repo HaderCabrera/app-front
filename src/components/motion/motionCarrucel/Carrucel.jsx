@@ -4,7 +4,16 @@ import { motion } from "framer-motion";
 
 import MotionText from "../MotionText.module.css"
 
-const phrases = ["Innovación", "Tecnología", "Análisis", "Optimización", "Transformación", "Optimización", "Transformación"];
+const phrases = ["Innovación", "Tecnología", "Análisis", "Optimización", "Monitoreo", "Inteligente", "Eficiencia"];
+// const phrases = [
+//   "Monitoreo en Tiempo Real",
+//   "Análisis Predictivo",
+//   "Optimización Energética",
+//   "Centralización de Datos",
+//   "Tecnología Cloud",
+//   "Mantenimiento Inteligente",
+//   "Eficiencia Industrial"
+// ];
 
 export default function ContinuousTimelineAnimation() {
   return (
@@ -17,7 +26,7 @@ export default function ContinuousTimelineAnimation() {
           x: ["100%", "-100%"], // Desplaza desde la derecha hasta la izquierda
         }}
         transition={{
-          duration: 10, // Duración de la animación
+          duration: 12, // Duración de la animación
           repeat: Infinity, // Repite la animación infinitamente
           ease: "linear", // Movimiento lineal sin aceleración
         }}
@@ -36,10 +45,10 @@ export default function ContinuousTimelineAnimation() {
           x: ["100%", "-100%"], // Desplaza desde la derecha hasta la izquierda
         }}
         transition={{
-          duration: 10, // Duración de la animación
+          duration: 12, // Duración de la animación
           repeat: Infinity, // Repite la animación infinitamente
           ease: "linear", // Movimiento lineal sin aceleración
-          delay: 5, // Delay de 5 segundos (la mitad de la duración)
+          delay: 6, // Delay de 5 segundos (la mitad de la duración)
         }}
       >
         {phrases.map((phrase, index) => (
