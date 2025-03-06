@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { stylesT } from "../stylesT";
-import { useState, useEffect } from "react";
+import { useState, useEffect, SetStateAction } from "react";
 import { plansA, plansB } from "@/constants/index";
 
 export default function SharedLayoutAnimation() {
@@ -18,7 +18,7 @@ export default function SharedLayoutAnimation() {
   const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
-    let interval;
+    let interval: string | number | NodeJS.Timeout | undefined;
 
     if (!isPaused) {
       interval = setInterval(() => {
@@ -29,7 +29,7 @@ export default function SharedLayoutAnimation() {
     return () => clearInterval(interval);
   }, [currentIndex, isPaused, selectedTab.length]);
 
-  const handleManualChange = (index) => {
+  const handleManualChange = (index: SetStateAction<number>) => {
     setIsPaused(true);
     setCurrentIndex(index);
     setTimeout(() => setIsPaused(false), 5000);

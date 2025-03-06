@@ -50,11 +50,11 @@ button {
   transition: background-color 0.3s ease;
 }
 
-[data-theme="light"] button:hover{
+/* [data-theme="light"] button:hover{
   background-color: var(--success);
   color: var(--background2);
 
-}
+} */
 
 section{
   background: var(--background2);
@@ -73,12 +73,12 @@ p {
 }
 
 
-  /*       DECORACION MODO OBSCURO       */
+        /* DECORACION MODO OBSCURO      
   [data-theme="dark"] button:hover {
     background-color: var(--background2);
     color: var(--foreground);
-  }
-x
+  } */
+
   [data-theme="dark"] section{
     background: var(--background2);
   }
