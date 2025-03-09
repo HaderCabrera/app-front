@@ -9,7 +9,7 @@ import { services } from "@/constants/index";
 function ServicesSlide() {
   return (
     <section className={`${stylesT.sectionLayout} ${stylesT.textResponsive} ${stylesT.gapResponsive}`} id="servicios">
-      <div className="flex flex-col items-center text-center">
+      <div className="flex flex-col items-center">
         <h1 className={`${stylesT.titleSectionResponsive} pb-4`}>Nuestros servicios</h1>
         <p className="text-justify px-4">
           En un mundo digital en constante evolución, ofrecemos soluciones innovadoras diseñadas para potenciar tu negocio y llevarlo al siguiente nivel.
@@ -26,14 +26,14 @@ function ServicesSlide() {
           {services.map((service, index) => (
             <motion.div
               key={service.id}
-              className="p-4 bg-white rounded-lg shadow-md text-center"
+              className="p-4 rounded-lg shadow-md"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -30 }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-xl font-bold">{service.title}</h2>
-              <p className="mt-2 line-clamp-3 text-sm">{service.description}</p>
+              <h2 className="">{service.title}</h2>
+              <p className="mt-2 ">{service.description}</p>
             </motion.div>
           ))}
         </div>
