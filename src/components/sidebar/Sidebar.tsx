@@ -110,6 +110,8 @@ const Sidebar = () => {
             <Image
               src="/assets/insignia_degrade.png"
               alt="Logo"
+              width={100}
+              height={100}
               className="w-8 transition-all duration-300"
             />
             <h2 className="ml-3 text-lg font-bold text-[var(--foreground)]">Aeteris</h2>

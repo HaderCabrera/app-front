@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu } from "lucide-react"
+import { FaAlignJustify  } from "react-icons/fa"
 
 import { useRouter } from "next/navigation";
 import { signOut } from "aws-amplify/auth";
@@ -51,7 +51,7 @@ export default function MobileMenu() {
         <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
                 <Button variant="ghost" size="sm" className="h-8 w-8 p-0 md:hidden">
-                    <Menu className="h-5 w-5" />
+                    <FaAlignJustify className="h-5 w-5" />
                     <span className="sr-only">Toggle menu</span>
                 </Button>
             </SheetTrigger>

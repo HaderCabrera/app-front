@@ -5,19 +5,9 @@ import Image from "next/image"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import {
-  CheckCircle2,
-  ArrowRight,
-  Twitter,
-  Linkedin,
-  Github,
-  Play,
-  Check,
-  Shield,
-  Lock,
-  FileCheck,
-  Server,
-} from "lucide-react"
+
+
+import { FaWhatsapp, FaGithubAlt, FaLinkedin , FaCheckCircle, FaShieldAlt,FaPlayCircle,FaArrowRight } from "react-icons/fa";
 
 import { useTranslation } from '@/../hooks/useTranlation';
 
@@ -64,7 +54,7 @@ export default function LandingPage() {
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Button size="lg" className="gap-1">
-                    {t.hero.buttons.getStarted} <ArrowRight className="h-4 w-4" />
+                    {t.hero.buttons.getStarted} <FaArrowRight  className="h-4 w-4" />
                   </Button>
                   <Button
                     variant="outline"
@@ -99,7 +89,7 @@ export default function LandingPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {t.features.items.map((feature, index) => (
                     <div key={index} className="flex flex-col p-6 bg-background rounded-lg border shadow-sm h-full">
-                      <CheckCircle2 className="h-10 w-10 text-primary mb-4" />
+                      <FaCheckCircle className="h-10 w-10 text-primary mb-4" />
                       <h3 className="font-bold text-lg mb-2">{feature.title}</h3>
                       <p className="text-muted-foreground text-sm">{feature.description}</p>
                     </div>
@@ -150,7 +140,7 @@ export default function LandingPage() {
                   <TabsContent key={tab.value} value={tab.value} className="relative border rounded-lg p-1">
                     <div className="absolute top-4 right-4 z-10 flex gap-2">
                       <Button variant="outline" size="sm" className="bg-white/90 hover:bg-white hidden sm:flex">
-                        <Play className="h-4 w-4 mr-2" /> {t.dashboard.demo.watch}
+                        <FaPlayCircle  className="h-4 w-4 mr-2" /> {t.dashboard.demo.watch}
                       </Button>
                       <Button size="sm" className="bg-primary/90 hover:bg-primary">
                         {t.dashboard.demo.try}
@@ -228,7 +218,7 @@ export default function LandingPage() {
                   <ul className="space-y-2 mt-4">
                     {t.integrations.api.features.map((feature) => (
                       <li key={feature} className="flex items-start">
-                        <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                        <FaCheckCircle className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
                         <span className="text-sm md:text-base">{feature}</span>
                       </li>
                     ))}
@@ -276,7 +266,7 @@ export default function LandingPage() {
                 {t.security.features.map((item, index) => (
                   <div key={index} className="flex flex-col p-6 bg-background rounded-lg border shadow-sm">
                     <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                      <Shield className="h-6 w-6 text-primary" />
+                      <FaShieldAlt className="h-6 w-6 text-primary" />
                     </div>
                     <h3 className="text-lg font-bold mb-2">{item.title}</h3>
                     <p className="text-muted-foreground text-sm">{item.description}</p>
@@ -405,7 +395,7 @@ export default function LandingPage() {
                   <ul className="mt-6 space-y-2">
                     {plan.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center">
-                        <CheckCircle2 className="h-4 w-4 text-primary mr-2" />
+                        <FaCheckCircle className="h-4 w-4 text-primary mr-2" />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -430,7 +420,7 @@ export default function LandingPage() {
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
                 <Button size="lg" className="gap-1">
-                  {t.cta.button[0]} <ArrowRight className="h-4 w-4" />
+                  {t.cta.button[0]} <FaArrowRight  className="h-4 w-4" />
                 </Button>
                 <Button variant="outline" size="lg">
                   {t.cta.button[1]}
@@ -458,15 +448,15 @@ export default function LandingPage() {
           </p>
           <div className="flex items-center gap-4">
             <Link href="#" className="text-muted-foreground hover:text-foreground">
-              <Twitter className="h-5 w-5" />
-              <span className="sr-only">Twitter</span>
+              <FaWhatsapp className="h-5 w-5" />
+              <span className="sr-only">Whatsapp</span>
             </Link>
             <Link href="#" className="text-muted-foreground hover:text-foreground">
-              <Linkedin className="h-5 w-5" />
+              <FaLinkedin className="h-5 w-5" />
               <span className="sr-only">LinkedIn</span>
             </Link>
             <Link href="#" className="text-muted-foreground hover:text-foreground">
-              <Github className="h-5 w-5" />
+              <FaGithubAlt className="h-5 w-5" />
               <span className="sr-only">GitHub</span>
             </Link>
           </div>
