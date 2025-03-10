@@ -345,7 +345,7 @@ export default function LandingPage() {
             <div className="mx-auto grid max-w-5xl gap-6 py-12 lg:grid-cols-3">
               {t.testimonials.items.map((testimonial, index) => (
                 <div key={index} className="flex flex-col justify-between rounded-lg border p-6 shadow-sm">
-                  <p className="text-muted-foreground">"{testimonial.quote}"</p>
+                  <p className='text-muted-foreground'>{testimonial.quote}</p>
                   <div className="mt-6">
                     <p className="font-semibold">{testimonial.author}</p>
                     <p className="text-sm text-muted-foreground">{testimonial.role}</p>
