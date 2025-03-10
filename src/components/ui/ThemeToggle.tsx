@@ -1,6 +1,6 @@
 'use client';
 
-import { Moon, Sun } from "lucide-react";
+import { FaRegMoon, FaSun } from "react-icons/fa";
 import { useEffect, useState } from 'react';
 
 export default function ThemeToggle() {
@@ -26,11 +26,10 @@ export default function ThemeToggle() {
       onClick={toggleTheme}
       className="px-2 py-2 rounded"
     >
-      {/* Muestra el ícono correspondiente al tema */}
       {theme === 'light' ? (
-        <Moon className="h-6 w-6" />
+        <FaRegMoon className="h-5 w-5 md:h-6 md:w-6 " />
       ) : (
-        <Sun className="h-6 w-6" />
+        <FaSun className="h-5 w-5 md:h-6 md:w-6 " />
       )}
     </button>
   );

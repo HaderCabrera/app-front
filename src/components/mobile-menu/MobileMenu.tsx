@@ -11,16 +11,7 @@ import { signOut } from "aws-amplify/auth";
 import { Hub } from "aws-amplify/utils";
 import { useAuthenticator } from '@aws-amplify/ui-react';
 
-
-
-const navItems = [
-    { href: "#features", label: "Features" },
-    { href: "#dashboard", label: "Dashboard" },
-    { href: "#integrations", label: "Integrations" },
-    { href: "#security", label: "Security" },
-    { href: "#testimonials", label: "Testimonials" },
-    { href: "#pricing", label: "Pricing" },
-]
+import { useTranslation } from "@/../hooks/useTranlation";
 
 export default function MobileMenu() {
     const [open, setOpen] = useState(false)
@@ -54,6 +45,8 @@ export default function MobileMenu() {
         }
     }
 
+    const t = useTranslation();
+
     return (
         <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
@@ -66,20 +59,16 @@ export default function MobileMenu() {
                 <div className="flex flex-col h-full">
                     <div className="flex items-center justify-between mb-6">
                         <span className="text-lg font-bold">Menu</span>
-                        {/* <Button variant="ghost" size="sm" className="h-8 w-8 p-0" onClick={() => setOpen(false)}>
-                            <X className="h-5 w-5" />
-                            <span className="sr-only">Close menu</span>
-                        </Button> */}
                     </div>
                     <nav className="flex flex-col gap-4">
-                        {navItems.map((item) => (
+                        {t.header.nav.map((item) => (
                             <Link
-                                key={item.href}
-                                href={item.href}
+                                key={item.id}
+                                href={`#${item.id}`}
                                 className="text-base font-medium px-3 py-2 rounded-md hover:bg-muted"
                                 onClick={handleLinkClick}
                             >
-                                {item.label}
+                                {item.title}
                             </Link>
                         ))}
                     </nav>
@@ -88,4 +77,3 @@ export default function MobileMenu() {
         </Sheet>
     )
 }
-

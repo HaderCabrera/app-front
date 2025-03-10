@@ -1,8 +1,6 @@
 "use client"
 
-import Cognito from './Cognito.module.css'
-
-import {Authenticator, Button, Heading, useAuthenticator, useTheme, View} from '@aws-amplify/ui-react'
+import { Authenticator, Button, Heading, useAuthenticator, useTheme, View } from '@aws-amplify/ui-react'
 
 import { Text } from '@aws-amplify/ui-react';
 

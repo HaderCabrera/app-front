@@ -10,10 +10,9 @@ import { useRouter } from 'next/navigation';
 import { signOut } from 'aws-amplify/auth';
 import { Hub } from 'aws-amplify/utils';
 import { useAuthenticator } from '@aws-amplify/ui-react';
+
 import UserIconToggle from '@/components/ui/UserIconToggle';
-
 import ThemeToggle from '@/components/ui/ThemeToggle';
-
 import LanguageSwitcher from '@/components/ui/LenguageToggle';
 
 import { useTranslation } from '@/../hooks/useTranlation';
@@ -62,25 +61,6 @@ export default function NavBar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  //Logica para cambio de color
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      setIsDarkMode(true);
-      document.documentElement.classList.add('dark');
-    } else {
-      setIsDarkMode(false);
-      document.documentElement.classList.remove('dark');
-    }
-  }, []);
-  const toggleTheme = () => {
-    const newTheme = isDarkMode ? 'light' : 'dark';
-    setIsDarkMode(!isDarkMode);
-    document.documentElement.classList.toggle('dark');
-    localStorage.setItem('theme', newTheme);
-  };
-
   return (
     <header className={`${scrolled ? 'fixed backdrop-blur-md bg-opacity-10' : 'block'} top-0 z-40 w-full border-b`}>
       <div className='container flex h-16 items-center justify-between py-4 px-4 md:px-6 w-full'>
@@ -98,25 +78,20 @@ export default function NavBar() {
             </div>
           </Link>
         </div>
-
-        {/* Mobile Menu */}
         <MobileMenu />
-
-        {/* Desktop Navigation */}
         <nav className='hidden md:flex items-center gap-2 lg:gap-6'>
           {t.header.nav.map((nav) => (
             <Link key={nav.id} href={`#${nav.id}`} className='text-sm font-medium hover:text-primary'>
               {nav.title}
             </Link>
           ))}
-
-          <div className='flex items-center'>
-            <div className='mr-2'>|</div>
-            <UserIconToggle />
-            <ThemeToggle />
-            <LanguageSwitcher />
-          </div>
         </nav>
+        <div className='flex items-center'>
+          <div className='mr-2'>|</div>
+          <UserIconToggle />
+          <ThemeToggle />
+          <LanguageSwitcher />
+        </div>
       </div>
     </header>
   )

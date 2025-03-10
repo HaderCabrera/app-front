@@ -31,13 +31,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  params: { locale }, // Obtén el idioma actual desde los parámetros de la ruta
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: string }; // Asegúrate de que `locale` esté en los parámetros
 }>) {
   return (
-    <html lang="es"> {/* Usa el idioma actual en el atributo `lang` */}
+    <html lang="es">
       <body className={`${montserrat.variable} ${poppins.variable} ${openSans.variable} font-[--font-inter]`}>
         <LanguageProvider>
           <Auth>

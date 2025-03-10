@@ -1,11 +1,11 @@
 
-import { CircleUserRound, UserCog, UserX } from "lucide-react";
+import { FaUserCircle, FaUserClock, FaUserMinus } from "react-icons/fa";
 
-import {Hub} from "aws-amplify/utils";
+import { Hub } from "aws-amplify/utils";
 import { signOut } from "aws-amplify/auth";
 import { useAuthenticator } from '@aws-amplify/ui-react';
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import { useRouter } from 'next/navigation';
 
@@ -35,14 +35,14 @@ function UserIconToggle() {
             router.push("/signin");
         }
     }
-    
+
     return (
         <button
             type="button"
             className={``}
             onClick={signOutSignIn}
         >
-            {authStatus === "authenticated" ? <UserX className="h-6 w-6" /> : authStatus === "unauthenticated" ? <CircleUserRound className="h-6 w-6"/> : <UserCog className="h-6 w-6" />}
+            {authStatus === "authenticated" ? <FaUserMinus className="h-5 w-5 md:h-6 md:w-6 " /> : authStatus === "unauthenticated" ? <FaUserCircle className="h-5 w-5 md:h-6 md:w-6 " /> : <FaUserClock className="h-5 w-5 md:h-6 md:w-6 " />}
         </button>
     );
 }

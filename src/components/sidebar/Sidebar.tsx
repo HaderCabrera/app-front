@@ -97,7 +97,6 @@ const Sidebar = () => {
             <FaBars />
           </button>
         )}
-
         {/* Logo y título - solo visible cuando no está colapsado */}
         {!collapsed && (
           <>
@@ -107,19 +106,16 @@ const Sidebar = () => {
             >
               <FaBars />
             </button>
-            
             {/* Logo sin fondo */}
             <Image
-              src="assets/insignia_degrade.png"
+              src="/assets/insignia_degrade.png"
               alt="Logo"
               className="w-8 transition-all duration-300"
             />
-            
             <h2 className="ml-3 text-lg font-bold text-[var(--foreground)]">Aeteris</h2>
           </>
         )}
       </div>
-
       {/* Navegación */}
       <nav className="flex-1 px-2 py-4 overflow-y-auto">
         <ul className="space-y-2">
@@ -144,7 +140,6 @@ const Sidebar = () => {
           })}
         </ul>
       </nav>
-
       {/* Pie de página con perfil de usuario */}
       <div className="p-2 border-t border-[var(--primary)]">
         {/* Información del usuario */}
@@ -161,7 +156,6 @@ const Sidebar = () => {
                 <p className="text-xs text-[var(--primary)]">Administrador</p>
               </div>
             </div>
-
             {/* Contenedor para el botón de cerrar sesión */}
             <div className="flex justify-center">
               <button
@@ -180,7 +174,6 @@ const Sidebar = () => {
             <div className="bg-[var(--primary)] rounded-full p-2 flex-shrink-0 shadow-md">
               <FaUserCircle className="text-xl text-[var(--background2)]" />
             </div>
-            
             <button
               onClick={handleSignOut}
               className="p-2 rounded-full bg-[var(--primary)] text-[var(--background2)] hover:bg-[#1a1a2e] transition-all duration-300 shadow-md"

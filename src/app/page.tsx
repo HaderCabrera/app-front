@@ -32,7 +32,7 @@ export default function LandingPage() {
 
   const t = useTranslation();
 
-    // Pricing period text
+  // Pricing period text
   const pricingPeriod = isYearly ? `/${t.pricing.topics[1]}` : `/${t.pricing.topics[0]}`;
 
   return (
@@ -153,7 +153,7 @@ export default function LandingPage() {
                         <Play className="h-4 w-4 mr-2" /> {t.dashboard.demo.watch}
                       </Button>
                       <Button size="sm" className="bg-primary/90 hover:bg-primary">
-                      {t.dashboard.demo.try}
+                        {t.dashboard.demo.try}
                       </Button>
                     </div>
                     <div className="w-full max-w-[1200px] max-h-[400px] overflow-hidden">
@@ -215,7 +215,7 @@ export default function LandingPage() {
                       height={60}
                       className="h-10 md:h-12 w-auto object-contain mb-2 md:mb-3"
                     />
-                    <span className="text-xs md:text-sm font-medium text-center">Integration {index}</span>
+                    <span className="text-xs md:text-sm font-medium text-center">{`Integration ${index}`}</span>
                   </div>
                 ))}
               </div>
@@ -267,11 +267,10 @@ export default function LandingPage() {
                   {t.security.title}
                 </h2>
                 <p className="max-w-[700px] text-muted-foreground md:text-xl">
-                 {t.security.description}
+                  {t.security.description}
                 </p>
               </div>
             </div>
-
             <div className="mx-auto max-w-6xl mt-12">
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {t.security.features.map((item, index) => (
@@ -284,7 +283,6 @@ export default function LandingPage() {
                   </div>
                 ))}
               </div>
-
               <div className="mt-16 bg-background rounded-lg border shadow-sm overflow-hidden">
                 <div className="grid md:grid-cols-2">
                   <div className="p-8 flex flex-col justify-center">
@@ -320,14 +318,12 @@ export default function LandingPage() {
                     <p className="text-sm text-center text-muted-foreground">
                       {t.security.finaltext}
                     </p>
-                    {/* <Button className="mt-6">Request Compliance Documentation</Button> */}
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
-
         {/* Testimonials Section */}
         <section id="testimonials" className="w-full py-12 md:py-24 lg:py-32 bg-muted/50">
           <div className="container px-4 md:px-6 max-w-full overflow-hidden">
@@ -355,7 +351,6 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
-
         {/* Pricing Section */}
         <section id="pricing" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6 max-w-full overflow-hidden">
@@ -369,27 +364,17 @@ export default function LandingPage() {
                   {t.pricing.description}
                 </p>
               </div>
-
               {/* Pricing Toggle */}
               <div className="flex items-center justify-center space-x-4 mt-4">
                 <span className={`text-sm font-medium ${!isYearly ? "text-primary" : "text-muted-foreground"}`}>
-                {t.pricing.topics[0]}
+                  {t.pricing.topics[0]}
                 </span>
                 <button
                   onClick={() => setIsYearly(!isYearly)}
-                  className={`
-                    relative inline-flex h-6 w-11 items-center rounded-full 
-                    transition-colors focus-visible:outline-none focus-visible:ring-2 
-                    focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background
-                    ${isYearly ? 'bg-primary' : 'bg-muted'}
-                  `}
+                  className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background ${isYearly ? 'bg-primary' : 'bg-muted'}`}
                 >
                   <span
-                    className={`
-                      inline-block h-5 w-5 rounded-full bg-white 
-                      transition-transform duration-200
-                      ${isYearly ? 'translate-x-5' : 'translate-x-1'}
-                    `}
+                    className={`inline-block h-5 w-5 rounded-full bg-white transition-transform duration-200 ${isYearly ? 'translate-x-5' : 'translate-x-1'}`}
                   />
                 </button>
                 <span className={`text-sm font-medium ${isYearly ? "text-primary" : "text-muted-foreground"}`}>
@@ -433,7 +418,6 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
-
         {/* CTA Section */}
         <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-muted/50">
           <div className="container px-4 md:px-6 max-w-full overflow-hidden">
@@ -446,7 +430,7 @@ export default function LandingPage() {
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
                 <Button size="lg" className="gap-1">
-                {t.cta.button[0]} <ArrowRight className="h-4 w-4" />
+                  {t.cta.button[0]} <ArrowRight className="h-4 w-4" />
                 </Button>
                 <Button variant="outline" size="lg">
                   {t.cta.button[1]}
@@ -456,7 +440,6 @@ export default function LandingPage() {
           </div>
         </section>
       </main>
-
       {/* Footer */}
       <footer className="w-full border-t py-6 md:py-0">
         <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row px-4 md:px-6 max-w-full overflow-hidden">
@@ -471,7 +454,7 @@ export default function LandingPage() {
             <span className="text-xl font-bold">CathaleIA</span>
           </div>
           <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-             {t.footer.copyright}
+            {t.footer.copyright}
           </p>
           <div className="flex items-center gap-4">
             <Link href="#" className="text-muted-foreground hover:text-foreground">

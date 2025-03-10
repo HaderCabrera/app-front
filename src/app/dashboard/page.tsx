@@ -63,7 +63,6 @@ export default function DashboardPage() {
           <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-gray-100">Dashboard</h1>
           <p className="text-sm sm:text-base text-gray-500 dark:text-gray-400 mt-1">Monitoreo de Motores y Sistemas</p>
         </header>
-
         {/* Summary Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
           {summaryCards.map((card, index) => (
@@ -86,7 +85,6 @@ export default function DashboardPage() {
             </div>
           ))}
         </div>
-
         {/* Motor Data Section */}
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden mb-8">
           <div className="p-4">
@@ -106,7 +104,6 @@ export default function DashboardPage() {
             </div>
           </div>
         </div>
-
         {/* Additional Info Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
@@ -124,7 +121,6 @@ export default function DashboardPage() {
               </div>
             </div>
           </div>
-
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
             <div className="p-4">
               <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4">Rendimiento del Sistema</h2>
@@ -138,7 +134,6 @@ export default function DashboardPage() {
                     <div className="bg-blue-600 h-2.5 rounded-full" style={{ width: "95%" }}></div>
                   </div>
                 </div>
-                
                 <div>
                   <div className="flex justify-between mb-1">
                     <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Eficiencia</span>
@@ -148,7 +143,6 @@ export default function DashboardPage() {
                     <div className="bg-green-600 h-2.5 rounded-full" style={{ width: "87%" }}></div>
                   </div>
                 </div>
-                
                 <div>
                   <div className="flex justify-between mb-1">
                     <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Uso de Combustible</span>

@@ -2,7 +2,7 @@
 'use client';
 
 import { useLanguage } from '@/context/LanguageContext';
-import { Moon, Sun, Globe } from "lucide-react";
+
 
 export default function LanguageSwitcher() {
   const { language, changeLanguage } = useLanguage();
@@ -11,7 +11,7 @@ export default function LanguageSwitcher() {
     <select
       value={language}
       onChange={(e) => changeLanguage(e.target.value)}
-      className="p-1 border rounded text-primary-foreground bg-foreground"
+      className="p-0 text-sm md:p-1 border rounded text-primary-foreground bg-foreground"
     >
       <option value="en">EN</option>
       <option value="es">ES</option>

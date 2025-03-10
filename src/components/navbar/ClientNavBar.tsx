@@ -10,6 +10,5 @@ export default function ClientNavBar() {
   if (isDashboard) {
     return null;
   }
-
-  return <NavBar />;
+  return <NavBar/>;
 }
