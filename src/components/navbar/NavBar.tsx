@@ -1,38 +1,30 @@
-"use client"
+'use client'
 
-import {navLinks} from '@/constants/index'
+import Image from "next/image"
+import MobileMenu from "@/components/mobile-menu/MobileMenu";
+import Link from "next/link"
+import { useEffect, useState } from "react";
 
-import Barra from './Barra.module.css';
+import { useRouter } from "next/navigation";
 
-import {useRouter} from "next/navigation";
-
-import {signOut} from "aws-amplify/auth";
-import {Hub} from "aws-amplify/utils";
-
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
-
-import Image from 'next/image';
-
+import { signOut } from "aws-amplify/auth";
+import { Hub } from "aws-amplify/utils";
 import { useAuthenticator } from '@aws-amplify/ui-react';
-
-
-import ThemeToggle from "@/components/ui/ThemeToggle";
 import UserIconToggle from "@/components/ui/UserIconToggle";
 
-import { motion } from "framer-motion";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 
-const Navbar = () => {
+import LanguageSwitcher from "@/components/ui/LenguageToggle";
 
-  const [toggle, setToggle] = useState(false);
-  const [active, setActive] = useState("");
-  const [scrolled, setScrolled] = useState(false);
+import { useTranslation } from '@/../hooks/useTranlation';
 
-  const { authStatus } = useAuthenticator(context => [context.authStatus]);
-
+export default function NavBar() {
   const router = useRouter();
 
+  const t = useTranslation();
 
+  //Logica de inicio de sesion
+  const { authStatus } = useAuthenticator(context => [context.authStatus]);
   useEffect(() => {
     const hubListenerCancel = Hub.listen("auth", (data) => {
       switch (data.payload.event) {
@@ -45,8 +37,18 @@ const Navbar = () => {
       }
     });
     return () => hubListenerCancel();
-  },[router]);
+  }, [router]);
 
+  const signOutSignIn = async () => {
+    if (authStatus === "authenticated") {
+      await signOut();
+    } else {
+      router.push("/signin");
+    }
+  }
+
+  //logica de posicion de navbar despues de hacer scroll
+  const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -56,79 +58,66 @@ const Navbar = () => {
         setScrolled(false);
       }
     };
-
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const signOutSignIn = async () => {
-    if(authStatus === "authenticated"){
-     await signOut();
+  //Logica para cambio de color
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setIsDarkMode(true);
+      document.documentElement.classList.add("dark");
     } else {
-     router.push("/signin");
+      setIsDarkMode(false);
+      document.documentElement.classList.remove("dark");
     }
-  }
-  
+  }, []);
+  const toggleTheme = () => {
+    const newTheme = isDarkMode ? "light" : "dark";
+    setIsDarkMode(!isDarkMode);
+    document.documentElement.classList.toggle("dark");
+    localStorage.setItem("theme", newTheme);
+  };
+
   return (
-    <nav className={`h-50 ${scrolled ? 'fixed' : 'block'} top-0 z-20 w-full 
-      ${scrolled ? "backdrop-blur-md bg-opacity-10 bg-secondary" : "bg-transparent"
-    }`}>
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 gap-2">
-        <Link href="/">
-          <div className="flex items-center space-x-1 rtl:space-x-reverse">
-            <Image
-              src="/assets/logo_navbar.png"
-              width={100}
-              height={32}
-              className="h-8 object-contain"
-              alt="Logo"
-            />
+    <header className={`${scrolled ? 'fixed backdrop-blur-md bg-opacity-10' : 'block'} top-0 z-40 w-full border-b`}>
+      <div className="container flex h-16 items-center justify-between py-4 px-4 md:px-6 w-full">
+        <div className="flex items-center gap-2">
+          <Link href="/">
+            <div className="flex items-center space-x-1 rtl:space-x-reverse">
+              <Image
+                src="/assets/insignia_degrade.png"
+                alt="Cathaleia Logo"
+                width={32}
+                height={32}
+                className="rounded"
+              />
+              <span className="text-xl font-bold">CATHALE<span className="text-slate-400">IA</span></span>
+            </div>
+          </Link>
+        </div>
+
+        {/* Mobile Menu */}
+        <MobileMenu />
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-2 lg:gap-6">
+          {t.header.nav.map((nav) => (
+            <Link href={`#${nav.id}`} className="text-sm font-medium hover:text-primary">
+              {nav.title}
+            </Link>
+          ))}
+
+          <div className="flex items-center">
+            <div className="mr-2">|</div>
+            <UserIconToggle />
+            <ThemeToggle />
+            <LanguageSwitcher />
           </div>
-        </Link>
-        <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <UserIconToggle/>
-          <ThemeToggle />
-          <button
-            data-collapse-toggle="navbar-sticky"
-            type="button"
-            className={`${Barra.phone} inline-flex items-center p-1 w-10 h-10 justify-center text-sm rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200`}
-            aria-controls="navbar-sticky"
-            aria-expanded="false"
-            onClick={() => setToggle(!toggle)}
-          >
-            {toggle ? 
-              (<><span className="sr-only">Close main menu</span><svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1l15 15M1 16l15-15" />
-              </svg></>) : 
-              (<><span className="sr-only">Open main menu</span><svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
-              </svg></>)
-            }
-          </button>
-
-        </div>
-        <div className={` items-center justify-between ${toggle ? `flex ${Barra.nav_ul}` : 'hidden'} w-full md:flex md:w-auto md:order-1 rounded`} id="navbar-sticky">
-          <ul className={`w-full flex flex-col p-4 md:p-0 font-medium  rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0`}>
-            {navLinks.map((nav) => (
-              <motion.li
-                key={nav.id}
-                className={`${
-                  active === nav.title ? `${Barra.link_nav}` : ""
-                }`}
-                onClick={() => setActive(nav.title)}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                onHoverStart={() => console.log('hover started!')}
-              >
-                <a className={`${Barra.link_nav} block py-2 px-3 rounded`} href={`#${nav.id}`}>{nav.title}</a>
-              </motion.li>
-            ))}
-          </ul>
-        </div>
+        </nav>
       </div>
-    </nav>
-  );
-};
-
-export default Navbar;
+    </header>
+  )
+}
