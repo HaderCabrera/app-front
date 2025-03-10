@@ -37,7 +37,6 @@ export default function LandingPage() {
 
   return (
     <div className="flex min-h-screen flex-col">
-
       <main className="flex-1">
         {/* Hero Section */}
         <section className="w-full relative h-screen">
@@ -51,7 +50,6 @@ export default function LandingPage() {
               Your browser does not support the video tag.
             </video>
           </div>
-
           {/* Content */}
           <div className="container relative z-20 px-4 md:px-6 max-w-full overflow-hidden h-full flex items-center">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
@@ -80,7 +78,6 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
-
         {/* Features Section */}
         <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-muted/50">
           <div className="container px-4 md:px-6 max-w-full overflow-hidden">
@@ -95,7 +92,6 @@ export default function LandingPage() {
                 </p>
               </div>
             </div>
-
             <div className="mx-auto max-w-6xl py-12">
               {/* Flex column on small/medium screens, grid on large screens */}
               <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12">
@@ -109,7 +105,6 @@ export default function LandingPage() {
                     </div>
                   ))}
                 </div>
-
                 {/* Right side: Image */}
                 <div className="flex items-center justify-center mt-8 lg:mt-0">
                   <Image
@@ -124,7 +119,6 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
-
         {/* Dashboard Showcase Section */}
         <section id="dashboard" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6 max-w-full overflow-hidden">
@@ -141,21 +135,19 @@ export default function LandingPage() {
                 </p>
               </div>
             </div>
-
             <div className="mx-auto max-w-6xl mt-12">
               <Tabs defaultValue="analytics" className="w-full">
                 <div className="flex justify-center mb-8 overflow-x-auto pb-2 -mx-4 px-4">
                   <TabsList className="flex-nowrap">
                     {t.dashboard.tabs.map((tab, index) => (
-                      <TabsTrigger value={tab.value} className="whitespace-nowrap">
+                      <TabsTrigger key={tab.value} value={tab.value} className="whitespace-nowrap">
                         {tab.title}
                       </TabsTrigger>
                     ))}
                   </TabsList>
                 </div>
-
                 {t.dashboard.tabs.map((tab) => (
-                  <TabsContent value={tab.value} className="relative border rounded-lg p-1">
+                  <TabsContent key={tab.value} value={tab.value} className="relative border rounded-lg p-1">
                     <div className="absolute top-4 right-4 z-10 flex gap-2">
                       <Button variant="outline" size="sm" className="bg-white/90 hover:bg-white hidden sm:flex">
                         <Play className="h-4 w-4 mr-2" /> {t.dashboard.demo.watch}
@@ -180,7 +172,6 @@ export default function LandingPage() {
                       </p>
                       <div className="flex flex-wrap gap-2">
                         {tab.keys.map(
-
                           (feature) => (
                             <span key={feature} className="bg-muted px-3 py-1 rounded-full text-xs font-medium">
                               {feature}
@@ -194,15 +185,8 @@ export default function LandingPage() {
                 }
               </Tabs>
             </div>
-
-            {/* <div className="flex justify-center mt-12">
-              <Button size="lg" className="gap-1">
-                Explore All Features <ArrowRight className="h-4 w-4" />
-              </Button>
-            </div> */}
           </div>
         </section>
-
         {/* Integrations Section */}
         <section id="integrations" className="w-full py-12 md:py-24 lg:py-32 bg-muted/50">
           <div className="container px-4 md:px-6 max-w-full overflow-hidden">
@@ -217,7 +201,6 @@ export default function LandingPage() {
                 </p>
               </div>
             </div>
-
             <div className="mx-auto max-w-6xl mt-12">
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 mb-12">
                 {[1, 2, 3, 4, 5].map((index) => (
@@ -236,7 +219,6 @@ export default function LandingPage() {
                   </div>
                 ))}
               </div>
-
               <div className="grid md:grid-cols-2 gap-6 md:gap-8 mt-12 md:mt-16">
                 <div className="space-y-4">
                   <h3 className="text-xl md:text-2xl font-bold">{t.integrations.api.title}</h3>
@@ -244,14 +226,13 @@ export default function LandingPage() {
                     {t.integrations.api.description}
                   </p>
                   <ul className="space-y-2 mt-4">
-                    {t.integrations.api.features.map((feature, index) => (
-                      <li key={index} className="flex items-start">
+                    {t.integrations.api.features.map((feature) => (
+                      <li key={feature} className="flex items-start">
                         <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
                         <span className="text-sm md:text-base">{feature}</span>
                       </li>
                     ))}
                   </ul>
-                  {/* <Button className="mt-4">View API Documentation</Button> */}
                 </div>
                 <div className="bg-background p-4 md:p-6 rounded-lg border shadow-sm">
                   <div className="space-y-4">
@@ -269,17 +250,12 @@ export default function LandingPage() {
                         </li>
                       ))}
                     </ol>
-                    {/* <Button variant="outline" className="w-full mt-4">
-                      Request Custom Integration
-                    </Button> */}
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
-
-        {/* Security Section */}
         <section id="security" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6 max-w-full overflow-hidden">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -326,9 +302,6 @@ export default function LandingPage() {
                         </li>
                       ))}
                     </ul>
-                    {/* <Button variant="outline" className="mt-6">
-                      Download Security Whitepaper
-                    </Button> */}
                   </div>
                   <div className="bg-muted p-8 flex flex-col justify-center items-center">
                     <div className="grid grid-cols-2 gap-4 mb-6">
