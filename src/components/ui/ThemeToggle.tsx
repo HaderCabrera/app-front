@@ -1,8 +1,6 @@
 'use client';
 
-import Ico from './Ico.module.css'
-
-import { SunIcon, MoonIcon } from '@heroicons/react/24/solid';
+import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from 'react';
 
 export default function ThemeToggle() {
@@ -10,27 +8,29 @@ export default function ThemeToggle() {
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', newTheme);
+    // Cambia la clase 'dark' en el elemento <html>
+    document.documentElement.classList.toggle('dark', newTheme === 'dark');
     localStorage.setItem('theme', newTheme);
     setTheme(newTheme);
   };
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
+    // Aplica la clase 'dark' si el tema guardado es 'dark'
+    document.documentElement.classList.toggle('dark', savedTheme === 'dark');
     setTheme(savedTheme);
   }, []);
 
   return (
     <button
       onClick={toggleTheme}
-      className= {`${Ico.ico} px-2 py-2 rounded`}
+      className="px-2 py-2 rounded"
     >
       {/* Muestra el ícono correspondiente al tema */}
       {theme === 'light' ? (
-        <MoonIcon className="h-6 w-6" /> 
+        <Moon className="h-6 w-6" />
       ) : (
-        <SunIcon className="h-6 w-6" /> 
+        <Sun className="h-6 w-6" />
       )}
     </button>
   );

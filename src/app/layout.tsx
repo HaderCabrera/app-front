@@ -7,6 +7,8 @@ import "@/app/styles/globals.css";
 import Auth from "../components/auth/Auth";
 import ClientNavBar from "@/components/navbar/ClientNavBar";
 
+import {LanguageProvider} from "@/context/LanguageContext";
+
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const poppins = Poppins({
   weight: ["400", "600", "700"],
@@ -35,12 +37,14 @@ export default function RootLayout({
   params: { locale: string }; // Asegúrate de que `locale` esté en los parámetros
 }>) {
   return (
-    <html lang={locale}> {/* Usa el idioma actual en el atributo `lang` */}
+    <html lang="es"> {/* Usa el idioma actual en el atributo `lang` */}
       <body className={`${montserrat.variable} ${poppins.variable} ${openSans.variable} font-[--font-inter]`}>
-        <Auth>
-          <ClientNavBar />
-          {children}
-        </Auth>
+        <LanguageProvider>
+          <Auth>
+            <ClientNavBar/>
+            {children}
+          </Auth>
+        </LanguageProvider>
       </body>
     </html>
   );
