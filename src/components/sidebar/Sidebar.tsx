@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image"
+
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -107,7 +109,7 @@ const Sidebar = () => {
             </button>
             
             {/* Logo sin fondo */}
-            <img
+            <Image
               src="assets/insignia_degrade.png"
               alt="Logo"
               className="w-8 transition-all duration-300"
