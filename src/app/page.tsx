@@ -35,7 +35,7 @@ export default function LandingPage() {
             <div className="absolute inset-0 bg-black/50 z-10"></div>
             <video className="w-full h-full object-cover" autoPlay muted loop playsInline>
               <source
-                src="/assets/heroVideo.mp4" type="video/mp4"
+                src="/assets/hero_video.mp4" type="video/mp4"
               />
               Your browser does not support the video tag.
             </video>
