@@ -97,13 +97,18 @@ export default function LandingPage() {
                 </div>
                 {/* Right side: Image */}
                 <div className="flex items-center justify-center mt-8 lg:mt-0">
-                  <Image
-                    src="/assets/withoutimg.jpg"
-                    alt="Features illustration"
+                  <video
+                    src="/assets/secuencia_02.mp4"
                     width={600}
                     height={600}
                     className="rounded-xl object-cover object-center shadow-lg max-w-full h-auto"
-                  />
+                    controls
+                    autoPlay
+                    loop
+                    muted
+                  >
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               </div>
             </div>
