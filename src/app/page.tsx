@@ -434,13 +434,13 @@ export default function LandingPage() {
       <footer className="w-full border-t py-6 md:py-0">
         <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row px-4 md:px-6 max-w-full overflow-hidden">
           <div className="flex items-center gap-2">
-            <Image
-              src="/assets/insignia_degrade.png"
-              alt="StreamLine Logo"
-              width={32}
-              height={32}
-              className="rounded"
-            />
+              <Image
+                src="/assets/insignia_degrade.png"
+                alt="StreamLine Logon"
+                width={40}
+                height={40}
+                className="rounded"
+              />
             <span className="text-xl font-bold">CathaleIA</span>
           </div>
           <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
