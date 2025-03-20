@@ -5,46 +5,33 @@ import MobileMenu from '@/components/mobile-menu/MobileMenu';
 import Link from 'next/link'
 import { useEffect, useState } from 'react';
 
-import { useRouter } from 'next/navigation';
+import { FaUserCircle, FaUserMinus } from "react-icons/fa";
 
-import { signOut } from 'aws-amplify/auth';
-import { Hub } from 'aws-amplify/utils';
-import { useAuthenticator } from '@aws-amplify/ui-react';
-
-import UserIconToggle from '@/components/ui/UserIconToggle';
 import ThemeToggle from '@/components/ui/ThemeToggle';
 import LanguageSwitcher from '@/components/ui/LenguageToggle';
 
 import { useTranslation } from '@/../hooks/useTranlation';
 
-export default function NavBar() {
-  const router = useRouter();
+interface NavbarProps {
+  currentUser: {
+    userId: string;
+    username: string;
+    signInDetails?: {
+      loginId?: string;
+      authFlowType?: string;
+    };
+  } | null;
+}
 
+export const dynamic = 'force-dynamic';
+
+export default function NavBar({ currentUser }: NavbarProps) {
+
+  const [isAuthenticated, setIsAuthenticated] = useState(currentUser !== null);
+
+  // console.log(currentUser)
   const t = useTranslation();
 
-  //Logica de inicio de sesion
-  const { authStatus } = useAuthenticator(context => [context.authStatus]);
-  useEffect(() => {
-    const hubListenerCancel = Hub.listen('auth', (data) => {
-      switch (data.payload.event) {
-        case 'signedIn':
-          router.push('/');
-          break;
-        case 'signedOut':
-          router.push('/');
-          break;
-      }
-    });
-    return () => hubListenerCancel();
-  }, [router]);
-
-  const signOutSignIn = async () => {
-    if (authStatus === 'authenticated') {
-      await signOut();
-    } else {
-      router.push('/signin');
-    }
-  }
 
   //logica de posicion de navbar despues de hacer scroll
   const [scrolled, setScrolled] = useState(false);
@@ -91,7 +78,27 @@ export default function NavBar() {
         </nav>
         <div className='flex items-center'>
           <div className='mr-2'>|</div>
-          <UserIconToggle />
+              <button
+                  type="button"
+                  className={``}
+                  onClick={() => {
+                    if (isAuthenticated) {
+                      // Redirigir a la API de cierre de sesión
+                      window.location.href = '/api/auth/sign-out';
+                    } else {
+                      // Redirigir a la API de inicio de sesión
+                      window.location.href = '/api/auth/sign-in';
+                    }
+                  }}
+              >
+                {
+                  isAuthenticated ? (
+                    <FaUserMinus className="h-5 w-5 md:h-6 md:w-6" /> // Usuario autenticado
+                  ) : (
+                    <FaUserCircle className="h-5 w-5 md:h-6 md:w-6" /> // Usuario no autenticado
+                  )
+                }
+              </button>
           <ThemeToggle />
           <LanguageSwitcher />
         </div>

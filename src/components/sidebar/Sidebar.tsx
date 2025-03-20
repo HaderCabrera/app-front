@@ -14,7 +14,7 @@ import {
   FaCog,
   FaSignOutAlt
 } from "react-icons/fa";
-import { useAuthenticator } from "@aws-amplify/ui-react";
+// import { useAuthenticator } from "@aws-amplify/ui-react";
 
 type MenuItem = {
   id: number;
@@ -23,6 +23,7 @@ type MenuItem = {
   icon: string;
 };
 
+
 const iconComponents: { [key: string]: React.ComponentType<any> } = {
   FaHome,
   FaFolder,
@@ -30,12 +31,14 @@ const iconComponents: { [key: string]: React.ComponentType<any> } = {
   FaCog,
 };
 
-const Sidebar = () => {
+export const dynamic = 'force-dynamic';
+
+export default function Sidebar () {
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
   const [collapsed, setCollapsed] = useState<boolean>(false);
   const pathname = usePathname();
   const router = useRouter();
-  const { signOut, user } = useAuthenticator((context) => [context.user]);
+  // const { signOut, user } = useAuthenticator((context) => [context.user]);
 
   // Emitir evento cuando cambia el estado del sidebar
   useEffect(() => {
@@ -76,10 +79,10 @@ const Sidebar = () => {
     return null;
   };
 
-  const handleSignOut = () => {
-    signOut();
-    router.push("/"); // Redirige a la página principal después de cerrar sesión
-  };
+  // const handleSignOut = () => {
+  //   signOut();
+  //   router.push("/"); // Redirige a la página principal después de cerrar sesión
+  // };
 
   return (
     <div
@@ -153,7 +156,8 @@ const Sidebar = () => {
               </div>
               <div className="ml-2">
                 <p className="font-medium text-sm text-[var(--foreground)]">
-                  {user?.username || "Admin"}
+                  username
+                  {/* {user?.username || "Admin"} */}
                 </p>
                 <p className="text-xs text-[var(--primary)]">Administrador</p>
               </div>
@@ -161,7 +165,7 @@ const Sidebar = () => {
             {/* Contenedor para el botón de cerrar sesión */}
             <div className="flex justify-center">
               <button
-                onClick={handleSignOut}
+                // onClick={handleSignOut}
                 className="flex items-center p-2 rounded-full bg-[var(--primary)] text-[var(--background2)] hover:bg-[#1a1a2e] transition-all duration-300 shadow-md"
                 title="Cerrar Sesión"
               >
@@ -177,7 +181,7 @@ const Sidebar = () => {
               <FaUserCircle className="text-xl text-[var(--background2)]" />
             </div>
             <button
-              onClick={handleSignOut}
+              // onClick={handleSignOut}
               className="p-2 rounded-full bg-[var(--primary)] text-[var(--background2)] hover:bg-[#1a1a2e] transition-all duration-300 shadow-md"
               title="Cerrar Sesión"
             >
@@ -189,5 +193,3 @@ const Sidebar = () => {
     </div>
   );
 };
-
-export default Sidebar;

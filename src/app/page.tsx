@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 
-import { FaWhatsapp, FaGithubAlt, FaLinkedin , FaCheckCircle, FaShieldAlt,FaPlayCircle,FaArrowRight } from "react-icons/fa";
+import { FaWhatsapp, FaGithubAlt, FaLinkedin, FaCheckCircle, FaShieldAlt, FaPlayCircle, FaArrowRight } from "react-icons/fa";
 
 import { useTranslation } from '@/../hooks/useTranlation';
 
@@ -54,7 +54,7 @@ export default function LandingPage() {
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Button size="lg" className="gap-1">
-                    {t.hero.buttons.getStarted} <FaArrowRight  className="h-4 w-4" />
+                    {t.hero.buttons.getStarted} <FaArrowRight className="h-4 w-4" />
                   </Button>
                   <Button
                     variant="outline"
@@ -97,7 +97,7 @@ export default function LandingPage() {
                 </div>
                 {/* Right side: Image */}
                 <div className="flex items-center justify-center mt-8 lg:mt-0">
-                  <video
+                  {/* <video
                     src="/assets/secuencia_02.mp4"
                     width={600}
                     height={600}
@@ -108,7 +108,16 @@ export default function LandingPage() {
                     muted
                   >
                     Your browser does not support the video tag.
+                  </video> */}
+
+                  <video className="w-full h-full object-cover" autoPlay muted loop playsInline>
+                    <source
+                      src="/assets/secuencia_02.mp4" type="video/mp4"
+                    />
+                    Your browser does not support the video tag.
                   </video>
+
+
                 </div>
               </div>
             </div>
@@ -145,7 +154,7 @@ export default function LandingPage() {
                   <TabsContent key={tab.value} value={tab.value} className="relative border rounded-lg p-1">
                     <div className="absolute top-4 right-4 z-10 flex gap-2">
                       <Button variant="outline" size="sm" className="bg-white/90 hover:bg-white hidden sm:flex">
-                        <FaPlayCircle  className="h-4 w-4 mr-2" /> {t.dashboard.demo.watch}
+                        <FaPlayCircle className="h-4 w-4 mr-2" /> {t.dashboard.demo.watch}
                       </Button>
                       <Button size="sm" className="bg-primary/90 hover:bg-primary">
                         {t.dashboard.demo.try}
@@ -425,7 +434,7 @@ export default function LandingPage() {
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
                 <Button size="lg" className="gap-1">
-                  {t.cta.button[0]} <FaArrowRight  className="h-4 w-4" />
+                  {t.cta.button[0]} <FaArrowRight className="h-4 w-4" />
                 </Button>
                 <Button variant="outline" size="lg">
                   {t.cta.button[1]}
@@ -439,13 +448,13 @@ export default function LandingPage() {
       <footer className="w-full border-t py-6 md:py-0">
         <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row px-4 md:px-6 max-w-full overflow-hidden">
           <div className="flex items-center gap-2">
-              <Image
-                src="/assets/insignia_degrade.png"
-                alt="StreamLine Logon"
-                width={40}
-                height={40}
-                className="rounded"
-              />
+            <Image
+              src="/assets/insignia_degrade.png"
+              alt="StreamLine Logon"
+              width={40}
+              height={40}
+              className="rounded"
+            />
             <span className="text-xl font-bold">CathaleIA</span>
           </div>
           <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
