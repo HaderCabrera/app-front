@@ -3,12 +3,23 @@
 import { usePathname } from 'next/navigation';
 import NavBar from '@/components/navbar/NavBar';
 
-export default function ClientNavBar() {
+interface NavbarProps {
+  currentUser: {
+    userId: string;
+    username: string;
+    signInDetails?: {
+      loginId?: string;
+      authFlowType?: string;
+    };
+  } | null;
+}
+
+export default function ClientNavBar({ currentUser }: NavbarProps) {
   const pathname = usePathname();
   const isDashboard = pathname?.startsWith('/dashboard');
 
   if (isDashboard) {
     return null;
   }
-  return <NavBar/>;
+  return <NavBar currentUser={currentUser}/>;
 }
