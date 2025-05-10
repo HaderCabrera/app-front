@@ -9,7 +9,7 @@ import { FaAlignJustify  } from "react-icons/fa"
 import { useRouter } from "next/navigation";
 import { signOut } from "aws-amplify/auth";
 import { Hub } from "aws-amplify/utils";
-import { useAuthenticator } from '@aws-amplify/ui-react';
+// import { useAuthenticator } from '@aws-amplify/ui-react';
 
 import { useTranslation } from "@/../hooks/useTranlation";
 
@@ -22,28 +22,28 @@ export default function MobileMenu() {
 
     const router = useRouter();
 
-    const { authStatus } = useAuthenticator(context => [context.authStatus]);
-    useEffect(() => {
-        const hubListenerCancel = Hub.listen("auth", (data) => {
-            switch (data.payload.event) {
-                case "signedIn":
-                    router.push("/");
-                    break;
-                case "signedOut":
-                    router.push("/");
-                    break;
-            }
-        });
-        return () => hubListenerCancel();
-    }, [router]);
+    // const { authStatus } = useAuthenticator(context => [context.authStatus]);
+    // useEffect(() => {
+    //     const hubListenerCancel = Hub.listen("auth", (data) => {
+    //         switch (data.payload.event) {
+    //             case "signedIn":
+    //                 router.push("/");
+    //                 break;
+    //             case "signedOut":
+    //                 router.push("/");
+    //                 break;
+    //         }
+    //     });
+    //     return () => hubListenerCancel();
+    // }, [router]);
 
-    const signOutSignIn = async () => {
-        if (authStatus === "authenticated") {
-            await signOut();
-        } else {
-            router.push("/signin");
-        }
-    }
+    // const signOutSignIn = async () => {
+    //     if (authStatus === "authenticated") {
+    //         await signOut();
+    //     } else {
+    //         router.push("/signin");
+    //     }
+    // }
 
     const t = useTranslation();
 
